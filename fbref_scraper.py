@@ -4,37 +4,10 @@ import pandas as pd
 import time
 import os
 import re
+import tempfile
+import shutil
 from urllib.parse import urlparse
 from google.cloud import storage
-
-def create_folder_from_url(url):
-    # Parse the URL
-    parsed_url = urlparse(url)
-    # Get the path part
-    path = parsed_url.path
-    
-    # Extract match identifier from the URL
-    match_id = re.search(r'/matches/([^/]+)/', path)
-    
-    if match_id:
-        # Use match ID as part of folder name
-        folder_name = f"fbref_match_{match_id.group(1)}"
-    else:
-        # Fallback: Use the last part of the path
-        path_parts = path.strip('/').split('/')
-        folder_name = f"fbref_{'_'.join(path_parts[-2:])}"
-    
-    # Replace any invalid characters for folder names
-    folder_name = re.sub(r'[\\/*?:"<>|]', "_", folder_name)
-    
-    # Create the folder if it doesn't exist
-    if not os.path.exists(folder_name):
-        os.makedirs(folder_name)
-        print(f"Created folder: {folder_name}")
-    else:
-        print(f"Folder already exists: {folder_name}")
-    
-    return folder_name
 
 def extract_match_id(url):
     """
@@ -110,7 +83,7 @@ def scrape_fbref_tables(url):
     
     return all_tables
 
-def save_tables_to_csv(all_tables, folder_name, match_id):
+def save_tables_to_csv(all_tables, temp_dir, match_id):
     saved_files = []
     for table_id, table_data in all_tables.items():
         # If there are multiple header rows, use the last one as column names
@@ -128,48 +101,40 @@ def save_tables_to_csv(all_tables, folder_name, match_id):
             df['Nation'] = df['Nation'].apply(lambda x: x.split(' ', 1)[1] if ' ' in x else x)
             print(f"Processed 'Nation' column in table {table_id} - extracted text after space")
         
-        # Save to CSV in the specified folder
-        filename = os.path.join(folder_name, f"{table_id}.csv")
+        # Save to CSV in the temp directory
+        filename = os.path.join(temp_dir, f"{table_id}.csv")
         df.to_csv(filename, index=False)
         print(f"Saved table {table_id} to {filename}")
         saved_files.append(filename)
     
     return saved_files
 
-def delete_non_summary_files(folder_name):
+def filter_summary_files(file_paths):
     """
-    Delete all files in the given folder that don't contain 'summary' in their filename.
+    Filter the list to keep only files with 'summary' in their filename.
     
     Args:
-        folder_name (str): Path to the folder containing files to check
-    """
-    deleted_count = 0
-    kept_count = 0
-    kept_files = []
+        file_paths (list): List of file paths to filter
     
-    # List all files in the folder
-    for filename in os.listdir(folder_name):
-        file_path = os.path.join(folder_name, filename)
-        
-        # Skip directories
-        if os.path.isdir(file_path):
-            continue
+    Returns:
+        list: Filtered list of file paths
+    """
+    summary_files = []
+    non_summary_count = 0
+    
+    for file_path in file_paths:
+        filename = os.path.basename(file_path)
         
         # Check if file contains 'summary' in its name
-        if 'summary' not in filename.lower():
-            try:
-                os.remove(file_path)
-                print(f"Deleted: {file_path}")
-                deleted_count += 1
-            except Exception as e:
-                print(f"Error deleting {file_path}: {e}")
-        else:
+        if 'summary' in filename.lower():
             print(f"Kept: {file_path}")
-            kept_count += 1
-            kept_files.append(file_path)
+            summary_files.append(file_path)
+        else:
+            print(f"Excluded: {file_path}")
+            non_summary_count += 1
     
-    print(f"\nCleanup summary: Deleted {deleted_count} files, kept {kept_count} summary files.")
-    return kept_files
+    print(f"\nFiltering summary: Excluded {non_summary_count} files, kept {len(summary_files)} summary files.")
+    return summary_files
 
 def upload_to_gcs(local_file_paths, bucket_name, gcs_folder=None, project_id=None):
     """
@@ -231,45 +196,48 @@ def process_single_url(url, bucket_name, project_id):
         print("Could not extract match ID from URL, using 'unknown' instead")
         match_id = "unknown"
     
-    # Create folder based on URL
-    folder_name = create_folder_from_url(url)
-    
-    # Scrape tables
-    print("Scraping tables from FBref...")
-    all_tables = scrape_fbref_tables(url)
-    
-    uploaded_uris = []
-    if all_tables:
-        print(f"Found {len(all_tables)} tables with thead and tbody elements.")
+    # Create temporary directory
+    with tempfile.TemporaryDirectory() as temp_dir:
+        print(f"Created temporary directory: {temp_dir}")
         
-        # Print the table IDs
-        print("Table IDs:")
-        for table_id in all_tables.keys():
-            print(f" - {table_id}")
+        # Scrape tables
+        print("Scraping tables from FBref...")
+        all_tables = scrape_fbref_tables(url)
         
-        # Save tables to CSV in the created folder with match ID column
-        saved_files = save_tables_to_csv(all_tables, folder_name, match_id)
-        
-        # Delete files that don't contain "summary" in their names
-        print("\nCleaning up files - keeping only 'summary' files...")
-        kept_files = delete_non_summary_files(folder_name)
-        
-        # Upload remaining files to Google Cloud Storage
-        if kept_files:
-            print("\nUploading files to Google Cloud Storage...")
-            gcs_folder = f"fbref_data/{match_id}"  # Organize files by match ID
-            uploaded_uris = upload_to_gcs(kept_files, bucket_name, gcs_folder, project_id)
+        uploaded_uris = []
+        if all_tables:
+            print(f"Found {len(all_tables)} tables with thead and tbody elements.")
             
-            if uploaded_uris:
-                print("\nSuccessfully uploaded files to GCS:")
-                for uri in uploaded_uris:
-                    print(f" - {uri}")
+            # Print the table IDs
+            print("Table IDs:")
+            for table_id in all_tables.keys():
+                print(f" - {table_id}")
+            
+            # Save tables to CSV in the temporary directory with match ID column
+            saved_files = save_tables_to_csv(all_tables, temp_dir, match_id)
+            
+            # Filter for summary files
+            print("\nFiltering files - keeping only 'summary' files...")
+            summary_files = filter_summary_files(saved_files)
+            
+            # Upload summary files to Google Cloud Storage
+            if summary_files:
+                print("\nUploading files to Google Cloud Storage...")
+                gcs_folder = f"fbref_data/{match_id}"  # Organize files by match ID
+                uploaded_uris = upload_to_gcs(summary_files, bucket_name, gcs_folder, project_id)
+                
+                if uploaded_uris:
+                    print("\nSuccessfully uploaded files to GCS:")
+                    for uri in uploaded_uris:
+                        print(f" - {uri}")
+                else:
+                    print("\nNo files were uploaded to GCS.")
             else:
-                print("\nNo files were uploaded to GCS.")
+                print("\nNo summary files to upload.")
         else:
-            print("\nNo summary files to upload.")
-    else:
-        print("No tables found or scraping failed.")
+            print("No tables found or scraping failed.")
+        
+        print(f"Temporary directory will be automatically removed")
     
     return match_id, uploaded_uris
 
