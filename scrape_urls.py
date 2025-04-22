@@ -20,7 +20,7 @@ headers = {
 url = "https://fbref.com/en/comps/8/schedule/Champions-League-Scores-and-Fixtures"
 
 try:
-    # Small delay to avoid rate limiting
+    # Delay to avoid rate limiting
     time.sleep(5)
     
     # Create a client session with persistent cookies
