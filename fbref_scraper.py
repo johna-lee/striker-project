@@ -219,14 +219,9 @@ def upload_to_gcs(local_file_paths, bucket_name, gcs_folder=None, project_id=Non
         print(f"Error uploading to GCS: {e}")
         return []
 
-# Main execution function
-def main():
-    # URL of the match
-    url = "https://fbref.com/en/matches/07f058d4/Dinamo-Zagreb-Chelsea-September-6-2022-Champions-League"
-    
-    # Google Cloud Storage configuration
-    bucket_name = "striker-project"  # Replace with your bucket name
-    project_id = "striker-project-457523"    # Replace with your project ID
+def process_single_url(url, bucket_name, project_id):
+    """Process a single FBref URL"""
+    print(f"\n{'='*80}\nProcessing URL: {url}\n{'='*80}")
     
     # Extract match ID from URL
     match_id = extract_match_id(url)
@@ -243,6 +238,7 @@ def main():
     print("Scraping tables from FBref...")
     all_tables = scrape_fbref_tables(url)
     
+    uploaded_uris = []
     if all_tables:
         print(f"Found {len(all_tables)} tables with thead and tbody elements.")
         
@@ -274,6 +270,89 @@ def main():
             print("\nNo summary files to upload.")
     else:
         print("No tables found or scraping failed.")
+    
+    return match_id, uploaded_uris
+
+def main():
+    # CSV file containing the URLs
+    urls_csv_path = "fbref_urls.csv"  # Replace with your CSV file path
+    
+    # Google Cloud Storage configuration
+    bucket_name = "striker-project"  # Replace with your bucket name
+    project_id = "striker-project-457523"    # Replace with your project ID
+    
+    # Check if CSV file exists
+    if not os.path.exists(urls_csv_path):
+        print(f"Error: CSV file '{urls_csv_path}' not found.")
+        return
+    
+    # Read URLs from CSV file
+    try:
+        # Attempt to read URLs column
+        urls_df = pd.read_csv(urls_csv_path)
+        
+        # Determine the column name containing URLs
+        url_column = None
+        potential_columns = ['url', 'URL', 'link', 'LINK', 'fbref_url', 'match_url']
+        
+        for col in potential_columns:
+            if col in urls_df.columns:
+                url_column = col
+                break
+        
+        # If none of the expected columns were found, use the first column
+        if url_column is None:
+            url_column = urls_df.columns[0]
+            print(f"No standard URL column name found. Using first column: '{url_column}'")
+        
+        # Extract URLs
+        urls = urls_df[url_column].tolist()
+        
+        if not urls:
+            print("No URLs found in the CSV file.")
+            return
+        
+        print(f"Found {len(urls)} URLs in '{urls_csv_path}'")
+        
+        # Process each URL
+        results = []
+        for i, url in enumerate(urls):
+            print(f"\nProcessing URL {i+1}/{len(urls)}")
+            try:
+                match_id, uploaded_files = process_single_url(url, bucket_name, project_id)
+                results.append({
+                    'url': url,
+                    'match_id': match_id,
+                    'success': bool(uploaded_files),
+                    'files_uploaded': len(uploaded_files)
+                })
+                
+                # Add a delay between requests to avoid rate limiting
+                if i < len(urls) - 1:  # Don't sleep after the last URL
+                    print("Waiting 2 seconds before processing next URL...")
+                    time.sleep(2)
+            except Exception as e:
+                print(f"Error processing URL {url}: {e}")
+                results.append({
+                    'url': url,
+                    'match_id': None,
+                    'success': False,
+                    'files_uploaded': 0,
+                    'error': str(e)
+                })
+        
+        # Create summary report
+        summary_df = pd.DataFrame(results)
+        summary_path = "fbref_scraping_results.csv"
+        summary_df.to_csv(summary_path, index=False)
+        print(f"\nScraping summary saved to {summary_path}")
+        
+        # Print overall statistics
+        successful = summary_df['success'].sum()
+        print(f"\nProcessing complete: {successful}/{len(urls)} URLs successfully processed")
+        
+    except Exception as e:
+        print(f"Error reading CSV file: {e}")
 
 if __name__ == "__main__":
     main()
