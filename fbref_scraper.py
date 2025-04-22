@@ -223,7 +223,11 @@ def process_single_url(url, bucket_name, project_id):
             # Upload summary files to Google Cloud Storage
             if summary_files:
                 print("\nUploading files to Google Cloud Storage...")
-                gcs_folder = f"fbref_data/{match_id}"  # Organize files by match ID
+                # Upload directly to bucket root or specified path without match ID folder
+                gcs_folder = None  # Set to None to upload to bucket root
+                # Alternatively, you could use a static folder like "fbref_data" if needed
+                # gcs_folder = "fbref_data"  
+                
                 uploaded_uris = upload_to_gcs(summary_files, bucket_name, gcs_folder, project_id)
                 
                 if uploaded_uris:
@@ -298,7 +302,7 @@ def main():
                 # Add a delay between requests to avoid rate limiting
                 if i < len(urls) - 1:  # Don't sleep after the last URL
                     print("Waiting 2 seconds before processing next URL...")
-                    time.sleep(2)
+                    time.sleep(5)
             except Exception as e:
                 print(f"Error processing URL {url}: {e}")
                 results.append({
