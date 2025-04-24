@@ -1,12 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import re
 import time
 import os
-import re
-import tempfile
-import shutil
-from urllib.parse import urlparse
 from google.cloud import storage
 
 def extract_match_id(url):
@@ -18,18 +15,28 @@ def extract_match_id(url):
         return match.group(1)
     return None
 
-def scrape_fbref_tables(url):
+def scrape_specific_tables(url):
+    """
+    Scrape only tables with specific column headers from the FBref match page
+    """
+    # Target key columns we're looking for
+    key_columns = ["Player", "Min", "Gls", "Ast", "xG", "Pos"]
+    
     # Add headers to avoid being blocked
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     }
     
     # Make the request
-    response = requests.get(url, headers=headers)
-    
-    # Check if request was successful
-    if response.status_code != 200:
-        print(f"Failed to retrieve page: Status code {response.status_code}")
+    try:
+        response = requests.get(url, headers=headers)
+        
+        # Check if request was successful
+        if response.status_code != 200:
+            print(f"Failed to retrieve page: Status code {response.status_code}")
+            return None
+    except requests.exceptions.RequestException as e:
+        print(f"Request error: {e}")
         return None
     
     # Parse HTML content
@@ -38,8 +45,9 @@ def scrape_fbref_tables(url):
     # Find all tables
     tables = soup.find_all('table')
     
-    # Dictionary to store all table data
-    all_tables = {}
+    # Dictionary to store matching tables
+    matching_tables = {}
+    table_count = 0
     
     # Process each table
     for i, table in enumerate(tables):
@@ -50,7 +58,7 @@ def scrape_fbref_tables(url):
         # Skip if table doesn't have both thead and tbody
         if not thead or not tbody:
             continue
-            
+        
         # Get table ID or create a generic name
         table_id = table.get('id', f'table_{i+1}')
         
@@ -64,206 +72,204 @@ def scrape_fbref_tables(url):
                 # Add cell content to row (repeated if colspan > 1)
                 header_row.extend([th.text.strip()] * colspan)
             header_rows.append(header_row)
-            
-        # Extract body rows
-        body_rows = []
-        for tr in tbody.find_all('tr'):
-            body_row = []
-            for td in tr.find_all(['td', 'th']):
-                # Handle colspan similar to headers
-                colspan = int(td.get('colspan', 1))
-                body_row.extend([td.text.strip()] * colspan)
-            body_rows.append(body_row)
-            
-        # Store the data
-        all_tables[table_id] = {
-            'header_rows': header_rows,
-            'body_rows': body_rows
-        }
-    
-    return all_tables
-
-def save_tables_to_csv(all_tables, temp_dir, match_id):
-    saved_files = []
-    for table_id, table_data in all_tables.items():
-        # If there are multiple header rows, use the last one as column names
-        header = table_data['header_rows'][-1] if table_data['header_rows'] else []
         
+        # If there are multiple header rows, use the last one
+        if not header_rows:
+            continue
+            
+        last_header = header_rows[-1]
+        
+        # Check if this header row matches our target headers
+        # We'll check if the key columns are present
+        if all(col in last_header for col in key_columns):
+            print(f"Found matching table: {table_id}")
+            
+            # Extract body rows
+            body_rows = []
+            for tr in tbody.find_all('tr'):
+                # Skip header rows in body
+                if tr.get('class') and 'thead' in tr.get('class'):
+                    continue
+                
+                # Skip summary rows (usually has 'sum' in class)
+                if tr.get('class') and 'sum' in tr.get('class'):
+                    continue
+                    
+                body_row = []
+                for td in tr.find_all(['td', 'th']):
+                    # Handle colspan similar to headers
+                    colspan = int(td.get('colspan', 1))
+                    body_row.extend([td.text.strip()] * colspan)
+                
+                # Only add rows with content
+                if body_row and any(cell.strip() for cell in body_row):
+                    # Make sure the row has the correct length
+                    if len(body_row) == len(last_header):
+                        body_rows.append(body_row)
+            
+            # Store the data if we have rows
+            if body_rows:
+                # Get team name from caption or from table ID
+                team_name = "Unknown"
+                caption = table.find('caption')
+                if caption:
+                    caption_text = caption.text.strip()
+                    # Extract team name from caption (usually in the format "Team_Name Player Statistics")
+                    if " Player " in caption_text:
+                        team_name = caption_text.split(" Player ")[0].strip()
+                
+                # Use a unique key for this table
+                table_count += 1
+                key = f"team_{table_count}"
+                
+                matching_tables[key] = {
+                    'team_name': team_name,
+                    'header': last_header,
+                    'body_rows': body_rows
+                }
+    
+    return matching_tables
+
+def process_and_combine_tables(tables, match_id):
+    """
+    Process the matching tables and combine them into a single DataFrame
+    """
+    all_dataframes = []
+    
+    for key, table_data in tables.items():
         # Create DataFrame
-        df = pd.DataFrame(table_data['body_rows'], columns=header if header else None)
+        df = pd.DataFrame(table_data['body_rows'], columns=table_data['header'])
         
         # Add match_id column to each row
         df.insert(0, 'match_id', match_id)
-        print(f"Added match_id column '{match_id}' to table {table_id}")
+        
+        # Add team name column
+        df.insert(1, 'team', table_data['team_name'])
         
         # Process the Nation column if it exists
         if 'Nation' in df.columns:
             df['Nation'] = df['Nation'].apply(lambda x: x.split(' ', 1)[1] if ' ' in x else x)
-            print(f"Processed 'Nation' column in table {table_id} - extracted text after space")
         
-        # Save to CSV in the temp directory
-        filename = os.path.join(temp_dir, f"{table_id}.csv")
-        df.to_csv(filename, index=False)
-        print(f"Saved table {table_id} to {filename}")
-        saved_files.append(filename)
+        # Add to list of DataFrames
+        all_dataframes.append(df)
+        print(f"Processed {key} ({table_data['team_name']}) with {len(df)} rows")
     
-    return saved_files
+    # Combine all DataFrames into one
+    if all_dataframes:
+        combined_df = pd.concat(all_dataframes, ignore_index=True)
+        return combined_df
+    else:
+        return None
 
-def filter_summary_files(file_paths):
+def upload_to_gcs(local_file_path, bucket_name, destination_blob_name):
     """
-    Filter the list to keep only files with 'summary' in their filename.
-    
-    Args:
-        file_paths (list): List of file paths to filter
-    
-    Returns:
-        list: Filtered list of file paths
+    Upload a file to Google Cloud Storage
     """
-    summary_files = []
-    non_summary_count = 0
-    
-    for file_path in file_paths:
-        filename = os.path.basename(file_path)
-        
-        # Check if file contains 'summary' in its name
-        if 'summary' in filename.lower():
-            print(f"Kept: {file_path}")
-            summary_files.append(file_path)
-        else:
-            print(f"Excluded: {file_path}")
-            non_summary_count += 1
-    
-    print(f"\nFiltering summary: Excluded {non_summary_count} files, kept {len(summary_files)} summary files.")
-    return summary_files
-
-def upload_to_gcs(local_file_paths, bucket_name, gcs_folder=None, project_id=None):
-    """
-    Upload files to Google Cloud Storage
-    
-    Args:
-        local_file_paths (list): List of local file paths to upload
-        bucket_name (str): Name of the GCS bucket
-        gcs_folder (str, optional): Folder within the bucket to upload files to
-        project_id (str, optional): Google Cloud project ID
-    
-    Returns:
-        list: List of GCS URIs for the uploaded files
-    """
-    # Initialize GCS client
     try:
-        storage_client = storage.Client(project=project_id)
-        bucket = storage_client.bucket(bucket_name)
+        # Initialize GCS client
+        storage_client = storage.Client()
         
-        uploaded_uris = []
+        # Get bucket
+        bucket = storage_client.get_bucket(bucket_name)
         
-        for local_path in local_file_paths:
-            # Get just the filename from the path
-            filename = os.path.basename(local_path)
-            
-            # Create GCS blob path (with optional folder)
-            if gcs_folder:
-                blob_name = f"{gcs_folder}/{filename}"
-            else:
-                blob_name = filename
-                
-            # Create blob object
-            blob = bucket.blob(blob_name)
-            
-            # Upload file
-            blob.upload_from_filename(local_path)
-            
-            # Generate URI
-            gcs_uri = f"gs://{bucket_name}/{blob_name}"
-            uploaded_uris.append(gcs_uri)
-            
-            print(f"Uploaded {local_path} to {gcs_uri}")
-            
-        return uploaded_uris
+        # Create blob
+        blob = bucket.blob(destination_blob_name)
         
+        # Upload file
+        blob.upload_from_filename(local_file_path)
+        
+        print(f"File {local_file_path} uploaded to gs://{bucket_name}/{destination_blob_name}")
+        return True
     except Exception as e:
         print(f"Error uploading to GCS: {e}")
-        return []
+        return False
 
-def process_single_url(url, bucket_name, project_id):
-    """Process a single FBref URL"""
-    print(f"\n{'='*80}\nProcessing URL: {url}\n{'='*80}")
+def process_match(url, output_dir=".", bucket_name=None):
+    """
+    Process a single match URL, save the results locally, and upload to GCS if specified
+    """
+    print(f"\n{'='*80}\nProcessing: {url}\n{'='*80}")
     
     # Extract match ID from URL
     match_id = extract_match_id(url)
-    if match_id:
-        print(f"Extracted match ID: {match_id}")
-    else:
-        print("Could not extract match ID from URL, using 'unknown' instead")
-        match_id = "unknown"
+    if not match_id:
+        print("Could not extract match ID from URL")
+        return {'url': url, 'match_id': None, 'status': 'Failed', 'reason': 'Invalid URL format'}
     
-    # Create temporary directory
-    with tempfile.TemporaryDirectory() as temp_dir:
-        print(f"Created temporary directory: {temp_dir}")
-        
-        # Scrape tables
-        print("Scraping tables from FBref...")
-        all_tables = scrape_fbref_tables(url)
-        
-        uploaded_uris = []
-        if all_tables:
-            print(f"Found {len(all_tables)} tables with thead and tbody elements.")
-            
-            # Print the table IDs
-            print("Table IDs:")
-            for table_id in all_tables.keys():
-                print(f" - {table_id}")
-            
-            # Save tables to CSV in the temporary directory with match ID column
-            saved_files = save_tables_to_csv(all_tables, temp_dir, match_id)
-            
-            # Filter for summary files
-            print("\nFiltering files - keeping only 'summary' files...")
-            summary_files = filter_summary_files(saved_files)
-            
-            # Upload summary files to Google Cloud Storage
-            if summary_files:
-                print("\nUploading files to Google Cloud Storage...")
-                # Upload directly to bucket root or specified path without match ID folder
-                gcs_folder = None  # Set to None to upload to bucket root
-                # Alternatively, you could use a static folder like "fbref_data" if needed
-                # gcs_folder = "fbref_data"  
-                
-                uploaded_uris = upload_to_gcs(summary_files, bucket_name, gcs_folder, project_id)
-                
-                if uploaded_uris:
-                    print("\nSuccessfully uploaded files to GCS:")
-                    for uri in uploaded_uris:
-                        print(f" - {uri}")
-                else:
-                    print("\nNo files were uploaded to GCS.")
-            else:
-                print("\nNo summary files to upload.")
-        else:
-            print("No tables found or scraping failed.")
-        
-        print(f"Temporary directory will be automatically removed")
+    print(f"Match ID: {match_id}")
     
-    return match_id, uploaded_uris
+    # Scrape specific tables from the page
+    matching_tables = scrape_specific_tables(url)
+    
+    if not matching_tables:
+        print("No matching tables found")
+        return {'url': url, 'match_id': match_id, 'status': 'Failed', 'reason': 'No matching tables found'}
+    
+    print(f"Found {len(matching_tables)} matching tables")
+    
+    # Process and combine tables
+    combined_df = process_and_combine_tables(matching_tables, match_id)
+    
+    if combined_df is None:
+        print("No data to save")
+        return {'url': url, 'match_id': match_id, 'status': 'Failed', 'reason': 'No data to process'}
+    
+    # Create output directory if it doesn't exist
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # Save combined DataFrame to CSV
+    file_name = f"match_{match_id}_player_stats.csv"
+    output_file = os.path.join(output_dir, file_name)
+    combined_df.to_csv(output_file, index=False)
+    print(f"Saved combined player stats to: {output_file}")
+    
+    # Result dictionary with default values
+    result = {
+        'url': url, 
+        'match_id': match_id, 
+        'status': 'Success', 
+        'rows': len(combined_df),
+        'tables': len(matching_tables),
+        'output_file': output_file,
+        'gcs_upload': 'Not attempted'
+    }
+    
+    # Upload to GCS if bucket is specified
+    if bucket_name:
+        gcs_path = f"match_data/{file_name}"
+        upload_success = upload_to_gcs(output_file, bucket_name, gcs_path)
+        result['gcs_upload'] = 'Success' if upload_success else 'Failed'
+        result['gcs_path'] = f"gs://{bucket_name}/{gcs_path}" if upload_success else None
+    
+    return result
 
 def main():
-    # CSV file containing the URLs
-    urls_csv_path = "fbref_urls.csv"  # Replace with your CSV file path
+    # Input file with URLs
+    input_file = "fbref_urls.csv"
     
-    # Google Cloud Storage configuration
-    bucket_name = "striker-project"  # Replace with your bucket name
-    project_id = "striker-project-457523"    # Replace with your project ID
+    # Output directory for CSV files
+    output_dir = "match_data"
     
-    # Check if CSV file exists
-    if not os.path.exists(urls_csv_path):
-        print(f"Error: CSV file '{urls_csv_path}' not found.")
+    # Output file for the processing report
+    report_file = "processing_report.csv"
+    
+    # GCS bucket name (set to None to skip uploading)
+    # You can specify your bucket name here or set via environment variable
+    bucket_name = "striker-project"
+    
+    print(f"Google Cloud Storage bucket: {bucket_name if bucket_name else 'Not specified (upload disabled)'}")
+    
+    # Check if input file exists
+    if not os.path.exists(input_file):
+        print(f"Input file '{input_file}' not found")
         return
     
-    # Read URLs from CSV file
+    # Read URLs from CSV
     try:
-        # Attempt to read URLs column
-        urls_df = pd.read_csv(urls_csv_path)
+        # Try to read URLs from the CSV file
+        urls_df = pd.read_csv(input_file)
         
-        # Determine the column name containing URLs
+        # Try to find the URL column
         url_column = None
         potential_columns = ['url', 'URL', 'link', 'LINK', 'fbref_url', 'match_url']
         
@@ -272,7 +278,7 @@ def main():
                 url_column = col
                 break
         
-        # If none of the expected columns were found, use the first column
+        # If no standard column name is found, use the first column
         if url_column is None:
             url_column = urls_df.columns[0]
             print(f"No standard URL column name found. Using first column: '{url_column}'")
@@ -281,50 +287,57 @@ def main():
         urls = urls_df[url_column].tolist()
         
         if not urls:
-            print("No URLs found in the CSV file.")
+            print("No URLs found in the CSV file")
             return
         
-        print(f"Found {len(urls)} URLs in '{urls_csv_path}'")
-        
-        # Process each URL
-        results = []
-        for i, url in enumerate(urls):
-            print(f"\nProcessing URL {i+1}/{len(urls)}")
-            try:
-                match_id, uploaded_files = process_single_url(url, bucket_name, project_id)
-                results.append({
-                    'url': url,
-                    'match_id': match_id,
-                    'success': bool(uploaded_files),
-                    'files_uploaded': len(uploaded_files)
-                })
-                
-                # Add a delay between requests to avoid rate limiting
-                if i < len(urls) - 1:  # Don't sleep after the last URL
-                    print("Waiting 2 seconds before processing next URL...")
-                    time.sleep(5)
-            except Exception as e:
-                print(f"Error processing URL {url}: {e}")
-                results.append({
-                    'url': url,
-                    'match_id': None,
-                    'success': False,
-                    'files_uploaded': 0,
-                    'error': str(e)
-                })
-        
-        # Create summary report
-        summary_df = pd.DataFrame(results)
-        summary_path = "fbref_scraping_results.csv"
-        summary_df.to_csv(summary_path, index=False)
-        print(f"\nScraping summary saved to {summary_path}")
-        
-        # Print overall statistics
-        successful = summary_df['success'].sum()
-        print(f"\nProcessing complete: {successful}/{len(urls)} URLs successfully processed")
-        
+        print(f"Found {len(urls)} URLs to process")
     except Exception as e:
-        print(f"Error reading CSV file: {e}")
+        print(f"Error reading input file: {e}")
+        return
+    
+    # Process each URL
+    results = []
+    
+    for i, url in enumerate(urls):
+        print(f"\nProcessing URL {i+1}/{len(urls)}")
+        
+        try:
+            result = process_match(url, output_dir, bucket_name)
+            results.append(result)
+            
+            # Add a delay between requests to avoid rate limiting
+            if i < len(urls) - 1:  # No delay after the last URL
+                delay = 3  # 3 seconds delay
+                print(f"Waiting {delay} seconds before next request...")
+                time.sleep(delay)
+                
+        except Exception as e:
+            print(f"Error processing URL: {e}")
+            results.append({
+                'url': url,
+                'match_id': extract_match_id(url),
+                'status': 'Error',
+                'reason': str(e),
+                'gcs_upload': 'Not attempted'
+            })
+    
+    # Create processing report
+    report_df = pd.DataFrame(results)
+    report_df.to_csv(report_file, index=False)
+    print(f"\nProcessing report saved to {report_file}")
+    
+    # Upload report to GCS if bucket is specified
+    if bucket_name:
+        upload_to_gcs(report_file, bucket_name, f"reports/{report_file}")
+    
+    # Print summary
+    success_count = sum(1 for r in results if r['status'] == 'Success')
+    upload_success_count = sum(1 for r in results if r.get('gcs_upload') == 'Success')
+    
+    print(f"\nProcessing complete:")
+    print(f"- {success_count}/{len(urls)} URLs successfully processed")
+    if bucket_name:
+        print(f"- {upload_success_count}/{success_count} files successfully uploaded to GCS")
 
 if __name__ == "__main__":
     main()
