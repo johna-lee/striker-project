@@ -6,20 +6,15 @@ import time
 import os
 from google.cloud import storage
 
+# Extract the match ID from the URL
 def extract_match_id(url):
-    """
-    Extract the match ID from the URL
-    """
     match = re.search(r'/matches/([^/]+)/', url)
     if match:
         return match.group(1)
     return None
 
+# Scrape only tables with target key columns
 def scrape_specific_tables(url):
-    """
-    Scrape only tables with specific column headers from the FBref match page
-    """
-    # Target key columns we're looking for
     key_columns = ["Player", "Min", "Gls", "Ast", "xG", "Pos"]
     
     # Add headers to avoid being blocked
@@ -79,8 +74,7 @@ def scrape_specific_tables(url):
             
         last_header = header_rows[-1]
         
-        # Check if this header row matches our target headers
-        # We'll check if the key columns are present
+        # Check if this header row matches our key column headers
         if all(col in last_header for col in key_columns):
             print(f"Found matching table: {table_id}")
             
@@ -91,7 +85,7 @@ def scrape_specific_tables(url):
                 if tr.get('class') and 'thead' in tr.get('class'):
                     continue
                 
-                # Skip summary rows (usually has 'sum' in class)
+                # Skip summary rows
                 if tr.get('class') and 'sum' in tr.get('class'):
                     continue
                     
@@ -130,14 +124,12 @@ def scrape_specific_tables(url):
     
     return matching_tables
 
+# Process the matching tables and combine them into a single DataFrame
 def process_and_combine_tables(tables, match_id):
-    """
-    Process the matching tables and combine them into a single DataFrame
-    """
     all_dataframes = []
     
+    # Create DataFrame
     for key, table_data in tables.items():
-        # Create DataFrame
         df = pd.DataFrame(table_data['body_rows'], columns=table_data['header'])
         
         # Add match_id column to each row
@@ -146,7 +138,7 @@ def process_and_combine_tables(tables, match_id):
         # Add team name column
         df.insert(1, 'team', table_data['team_name'])
         
-        # Process the Nation column if it exists
+        # Remove country flag from Nation column
         if 'Nation' in df.columns:
             df['Nation'] = df['Nation'].apply(lambda x: x.split(' ', 1)[1] if ' ' in x else x)
         
@@ -161,10 +153,8 @@ def process_and_combine_tables(tables, match_id):
     else:
         return None
 
+# Upload file to GCS
 def upload_to_gcs(local_file_path, bucket_name, destination_blob_name):
-    """
-    Upload a file to Google Cloud Storage
-    """
     try:
         # Initialize GCS client
         storage_client = storage.Client()
@@ -184,10 +174,8 @@ def upload_to_gcs(local_file_path, bucket_name, destination_blob_name):
         print(f"Error uploading to GCS: {e}")
         return False
 
+# Process single match URL, save results locally, upload to GCS
 def process_match(url, output_dir=".", bucket_name=None):
-    """
-    Process a single match URL, save the results locally, and upload to GCS if specified
-    """
     print(f"\n{'='*80}\nProcessing: {url}\n{'='*80}")
     
     # Extract match ID from URL
@@ -234,7 +222,7 @@ def process_match(url, output_dir=".", bucket_name=None):
         'gcs_upload': 'Not attempted'
     }
     
-    # Upload to GCS if bucket is specified
+    # Upload to GCS
     if bucket_name:
         gcs_path = f"match_data/{file_name}"
         upload_success = upload_to_gcs(output_file, bucket_name, gcs_path)
@@ -253,8 +241,7 @@ def main():
     # Output file for the processing report
     report_file = "processing_report.csv"
     
-    # GCS bucket name (set to None to skip uploading)
-    # You can specify your bucket name here or set via environment variable
+    # GCS bucket name
     bucket_name = "striker-project"
     
     print(f"Google Cloud Storage bucket: {bucket_name if bucket_name else 'Not specified (upload disabled)'}")
@@ -269,19 +256,8 @@ def main():
         # Try to read URLs from the CSV file
         urls_df = pd.read_csv(input_file)
         
-        # Try to find the URL column
-        url_column = None
-        potential_columns = ['url', 'URL', 'link', 'LINK', 'fbref_url', 'match_url']
-        
-        for col in potential_columns:
-            if col in urls_df.columns:
-                url_column = col
-                break
-        
-        # If no standard column name is found, use the first column
-        if url_column is None:
-            url_column = urls_df.columns[0]
-            print(f"No standard URL column name found. Using first column: '{url_column}'")
+        # Define URLs column
+        url_column = urls_df.columns[0]
         
         # Extract URLs
         urls = urls_df[url_column].tolist()
@@ -307,7 +283,7 @@ def main():
             
             # Add a delay between requests to avoid rate limiting
             if i < len(urls) - 1:  # No delay after the last URL
-                delay = 3  # 3 seconds delay
+                delay = 3  # 3 second delay
                 print(f"Waiting {delay} seconds before next request...")
                 time.sleep(delay)
                 
@@ -326,7 +302,7 @@ def main():
     report_df.to_csv(report_file, index=False)
     print(f"\nProcessing report saved to {report_file}")
     
-    # Upload report to GCS if bucket is specified
+    # Upload report to GCS
     if bucket_name:
         upload_to_gcs(report_file, bucket_name, f"reports/{report_file}")
     

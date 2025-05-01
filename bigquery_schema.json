@@ -1,0 +1,136 @@
+{
+    "BigQuery Schema": [
+      {
+        "name": "match_id",
+        "type": "STRING"
+      },
+      {
+        "name": "team",
+        "type": "STRING"
+      },
+      {
+        "name": "player",
+        "type": "STRING"
+      },
+      {
+        "name": "player_number",
+        "type": "STRING"
+      },
+      {
+        "name": "nation",
+        "type": "STRING"
+      },
+      {
+        "name": "position",
+        "type": "STRING"
+      },
+      {
+        "name": "age",
+        "type": "STRING"
+      },
+      {
+        "name": "minute",
+        "type": "INTEGER"
+      },
+      {
+        "name": "goal",
+        "type": "INTEGER"
+      },
+      {
+        "name": "assist",
+        "type": "INTEGER"
+      },
+      {
+        "name": "penalty_kick",
+        "type": "INTEGER"
+      },
+      {
+        "name": "penalty_kick_attempt",
+        "type": "INTEGER"
+      },
+      {
+        "name": "shot",
+        "type": "INTEGER"
+      },
+      {
+        "name": "shot_on_target",
+        "type": "INTEGER"
+      },
+      {
+        "name": "card_yellow",
+        "type": "INTEGER"
+      },
+      {
+        "name": "card_red",
+        "type": "INTEGER"
+      },
+      {
+        "name": "touch",
+        "type": "INTEGER"
+      },
+      {
+        "name": "tackle",
+        "type": "INTEGER"
+      },
+      {
+        "name": "interception",
+        "type": "INTEGER"
+      },
+      {
+        "name": "block",
+        "type": "INTEGER"
+      },
+      {
+        "name": "expected_goal",
+        "type": "FLOAT"
+      },
+      {
+        "name": "non_penalty_expected_goal",
+        "type": "FLOAT"
+      },
+      {
+        "name": "expected_assisted_goal",
+        "type": "FLOAT"
+      },
+      {
+        "name": "shot_creating_action",
+        "type": "INTEGER"
+      },
+      {
+        "name": "goal_creating_action",
+        "type": "INTEGER"
+      },
+      {
+        "name": "pass_completed",
+        "type": "INTEGER"
+      },
+      {
+        "name": "pass_attempted",
+        "type": "INTEGER"
+      },
+      {
+        "name": "pass_completion_pct",
+        "type": "FLOAT"
+      },
+      {
+        "name": "progressive_pass",
+        "type": "INTEGER"
+      },
+      {
+        "name": "carry",
+        "type": "INTEGER"
+      },
+      {
+        "name": "progressive_carry",
+        "type": "INTEGER"
+      },
+      {
+        "name": "dribble_attempted",
+        "type": "INTEGER"
+      },
+      {
+        "name": "dribble_success",
+        "type": "INTEGER"
+      }
+    ]
+  }

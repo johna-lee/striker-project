@@ -1,0 +1,31 @@
+match_id,team,Player,#,Nation,Pos,Age,Min,Gls,Ast,PK,PKatt,Sh,SoT,CrdY,CrdR,Touches,Tkl,Int,Blocks,xG,npxG,xAG,SCA,GCA,Cmp,Att,Cmp%,PrgP,Carries,PrgC,Att,Succ
+609cee82,Manchester City,Julián Álvarez,19,ARG,FW,22-247,90,1,0,0,0,2,1,0,0,37,0,1,1,0.8,0.8,0.1,6,0,22,28,78.6,2,20,0,3,1
+609cee82,Manchester City,Erling Haaland,9,NOR,FW,22-076,45,2,0,0,0,4,4,0,0,11,1,0,0,1.2,1.2,0.0,2,0,3,3,100.0,1,3,1,0,0
+609cee82,Manchester City,Cole Palmer,80,ENG,RM,20-152,45,0,0,0,0,2,1,0,0,31,0,0,0,0.1,0.1,0.0,0,0,25,26,96.2,3,25,4,3,2
+609cee82,Manchester City,Jack Grealish,10,ENG,"LW,LM",27-025,90,0,0,0,0,6,3,0,0,86,0,0,0,0.5,0.5,0.2,10,1,70,76,92.1,11,69,13,5,3
+609cee82,Manchester City,Bernardo Silva,20,POR,"CM,LM",28-056,65,0,0,0,0,2,1,0,0,68,1,0,0,0.5,0.5,0.3,5,0,56,62,90.3,2,43,4,2,1
+609cee82,Manchester City,Josh Wilson-Esbrand,97,ENG,LB,19-283,25,0,0,0,0,0,0,0,0,25,0,0,0,0.0,0.0,0.0,1,0,20,25,80.0,1,16,0,0,0
+609cee82,Manchester City,İlkay Gündoğan,8,GER,CM,31-346,90,0,0,0,0,4,2,0,0,131,4,0,1,0.2,0.2,0.3,7,1,111,116,95.7,10,75,4,1,0
+609cee82,Manchester City,Riyad Mahrez,26,ALG,"RW,RM",31-226,90,1,1,1,1,2,1,0,0,89,1,0,0,0.9,0.1,1.1,11,2,69,77,89.6,6,64,3,4,2
+609cee82,Manchester City,Sergio Gómez,21,ESP,"LB,LM",22-031,90,0,1,0,0,4,2,0,0,114,1,0,1,0.1,0.1,0.0,6,1,88,101,87.1,17,70,2,0,0
+609cee82,Manchester City,Aymeric Laporte,14,ESP,CB,28-131,90,0,0,0,0,0,0,0,0,109,0,1,0,0.0,0.0,0.1,3,2,100,107,93.5,10,80,4,0,0
+609cee82,Manchester City,Rúben Dias,3,POR,CB,25-144,90,0,0,0,0,1,0,0,0,131,0,1,0,0.0,0.0,0.0,3,0,121,126,96.0,4,101,1,0,0
+609cee82,Manchester City,João Cancelo,7,POR,RB,28-131,55,0,1,0,0,2,0,0,0,79,3,0,1,0.1,0.1,0.0,1,0,62,69,89.9,6,50,3,1,0
+609cee82,Manchester City,Rico Lewis,82,ENG,RB,17-318,35,0,0,0,0,0,0,0,0,40,0,0,1,0.0,0.0,0.0,0,0,37,39,94.9,1,31,1,0,0
+609cee82,Manchester City,Ederson,31,BRA,GK,29-049,90,0,0,0,0,0,0,0,0,34,0,0,0,0.0,0.0,0.0,0,0,34,34,100.0,0,23,0,0,0
+609cee82,FC Copenhagen,Mamoudou Karamoko,29,FRA,FW,23-027,45,0,0,0,0,0,0,0,0,8,0,0,0,0.0,0.0,0.0,0,0,2,3,66.7,0,2,0,1,0
+609cee82,FC Copenhagen,Valdemar Lund,27,DEN,CB,19-130,45,0,0,0,0,1,0,0,0,14,2,1,1,0.3,0.3,0.0,0,0,8,9,88.9,0,6,0,0,0
+609cee82,FC Copenhagen,Mohamed Daramy,15,DEN,"LW,FW",20-271,54,0,0,0,0,0,0,0,0,19,0,0,0,0.0,0.0,0.0,0,0,14,15,93.3,0,10,2,3,2
+609cee82,FC Copenhagen,Hákon Arnar Haraldsson,30,ISL,FW,19-178,36,0,0,0,0,0,0,0,0,9,1,0,0,0.0,0.0,0.2,1,0,6,8,75.0,1,5,1,0,0
+609cee82,FC Copenhagen,Ísak Jóhannesson,8,ISL,"CM,RW",19-196,90,0,0,0,0,0,0,0,0,32,1,2,0,0.0,0.0,0.3,1,0,22,27,81.5,1,9,0,0,0
+609cee82,FC Copenhagen,Viktor Claesson,7,SWE,"LM,FW",30-276,65,0,0,0,0,0,0,0,0,35,2,0,0,0.0,0.0,0.0,0,0,20,28,71.4,3,11,0,0,0
+609cee82,FC Copenhagen,Paul Mukairu,17,NGA,FW,22-260,25,0,0,0,0,1,0,0,0,7,0,0,0,0.2,0.2,0.0,1,0,2,3,66.7,0,5,1,3,3
+609cee82,FC Copenhagen,Lukas Lerager,12,DEN,CM,29-085,78,0,0,0,0,0,0,0,0,35,4,1,2,0.0,0.0,0.0,0,0,18,23,78.3,0,8,0,2,1
+609cee82,FC Copenhagen,Christian Sørensen,6,DEN,CM,30-060,12,0,0,0,0,0,0,0,0,3,0,0,0,0.0,0.0,0.0,0,0,2,3,66.7,1,1,0,0,0
+609cee82,FC Copenhagen,Marko Stamenic,35,NZL,"CM,RM",20-228,90,0,0,0,0,0,0,1,0,32,1,0,2,0.0,0.0,0.0,0,0,18,27,66.7,1,10,0,0,0
+609cee82,FC Copenhagen,Victor Bernth Kristiansen,34,DEN,LB,19-293,90,0,0,0,0,0,0,0,0,44,2,3,1,0.0,0.0,0.0,0,0,26,35,74.3,2,19,0,2,0
+609cee82,FC Copenhagen,Davit Khocholava,5,GEO,CB,29-239,90,0,0,0,0,0,0,0,0,37,0,0,2,0.0,0.0,0.0,0,0,26,29,89.7,0,14,0,0,0
+609cee82,FC Copenhagen,Denis Vavro,3,SVK,CB,26-178,90,0,0,0,0,0,0,0,0,41,1,0,2,0.0,0.0,0.0,0,0,29,29,100.0,0,11,0,0,0
+609cee82,FC Copenhagen,Kevin Diks,2,IDN,RB,25-364,65,0,0,0,0,0,0,0,0,32,2,1,1,0.0,0.0,0.0,0,0,17,20,85.0,0,9,0,2,0
+609cee82,FC Copenhagen,Peter Ankersen,22,DEN,RB,32-013,25,0,0,0,0,0,0,0,0,6,0,0,0,0.0,0.0,0.0,0,0,3,6,50.0,0,3,0,0,0
+609cee82,FC Copenhagen,Kamil Grabara,1,POL,GK,23-270,90,0,0,0,0,0,0,0,0,43,0,0,0,0.0,0.0,0.0,0,0,13,33,39.4,0,16,0,0,0

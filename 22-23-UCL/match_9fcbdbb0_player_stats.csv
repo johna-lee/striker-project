@@ -1,0 +1,30 @@
+match_id,team,Player,#,Nation,Pos,Age,Min,Gls,Ast,PK,PKatt,Sh,SoT,CrdY,CrdR,Touches,Tkl,Int,Blocks,xG,npxG,xAG,SCA,GCA,Cmp,Att,Cmp%,PrgP,Carries,PrgC,Att,Succ
+9fcbdbb0,FC Copenhagen,Viktor Claesson,7,SWE,FW,30-282,90,0,0,0,0,0,0,0,0,28,0,2,0,0.0,0.0,0.0,0,0,14,23,60.9,1,9,0,0,0
+9fcbdbb0,FC Copenhagen,Mohamed Daramy,15,DEN,"LW,LM",20-277,90,0,0,0,0,0,0,0,0,31,0,0,0,0.0,0.0,0.0,1,0,13,21,61.9,2,20,4,5,0
+9fcbdbb0,FC Copenhagen,Hákon Arnar Haraldsson,30,ISL,RW,19-184,58,0,0,0,0,2,0,0,0,29,1,0,1,0.2,0.2,0.0,3,0,16,21,76.2,3,10,0,1,1
+9fcbdbb0,FC Copenhagen,Ísak Jóhannesson,8,ISL,RM,19-202,32,0,0,0,0,0,0,0,0,20,1,0,2,0.0,0.0,0.0,0,0,11,16,68.8,0,8,1,0,0
+9fcbdbb0,FC Copenhagen,Victor Bernth Kristiansen,34,DEN,"LM,LB",19-299,90,0,0,0,0,0,0,0,0,54,2,0,2,0.0,0.0,0.0,1,0,34,46,73.9,4,23,3,2,1
+9fcbdbb0,FC Copenhagen,Lukas Lerager,12,DEN,CM,29-091,90,0,0,0,0,1,1,0,0,44,1,1,1,0.1,0.1,0.0,0,0,31,36,86.1,5,17,0,1,0
+9fcbdbb0,FC Copenhagen,Marko Stamenic,35,NZL,CM,20-234,89,0,0,0,0,2,0,1,0,49,0,2,2,0.1,0.1,0.0,1,0,37,41,90.2,2,25,0,0,0
+9fcbdbb0,FC Copenhagen,Paul Mukairu,17,NGA,CM,22-266,1,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,,0,0,0,0,0
+9fcbdbb0,FC Copenhagen,Elias Jelert,19,DEN,"RM,RB",19-121,90,0,0,0,0,0,0,0,0,42,2,1,0,0.0,0.0,0.1,1,0,31,38,81.6,4,23,0,0,0
+9fcbdbb0,FC Copenhagen,Valdemar Lund,27,DEN,CB,19-136,90,0,0,0,0,1,0,1,0,63,1,0,1,0.0,0.0,0.0,0,0,48,56,85.7,5,40,0,0,0
+9fcbdbb0,FC Copenhagen,Nicolai Boilesen,20,DEN,CB,30-237,90,0,0,0,0,0,0,0,0,80,0,2,2,0.0,0.0,0.0,1,0,71,74,95.9,3,51,0,0,0
+9fcbdbb0,FC Copenhagen,Davit Khocholava,5,GEO,CB,29-245,79,0,0,0,0,0,0,0,0,66,0,2,1,0.0,0.0,0.0,1,0,54,58,93.1,4,27,1,0,0
+9fcbdbb0,FC Copenhagen,Kevin Diks,2,IDN,CB,26-005,11,0,0,0,0,0,0,0,0,13,0,0,0,0.0,0.0,0.0,0,0,10,13,76.9,0,8,0,0,0
+9fcbdbb0,FC Copenhagen,Kamil Grabara,1,POL,GK,23-276,90,0,0,0,0,0,0,0,0,36,0,0,0,0.0,0.0,0.0,0,0,23,31,74.2,0,12,0,0,0
+9fcbdbb0,Manchester City,Julián Álvarez,19,ARG,FW,22-253,90,0,0,0,0,3,0,0,0,22,0,0,0,0.2,0.2,0.0,1,0,15,15,100.0,1,17,1,0,0
+9fcbdbb0,Manchester City,Jack Grealish,10,ENG,"FW,LW",27-031,76,0,0,0,0,0,0,0,0,45,1,0,1,0.0,0.0,0.3,4,0,36,38,94.7,3,39,4,1,0
+9fcbdbb0,Manchester City,Phil Foden,47,ENG,CM,22-136,14,0,0,0,0,0,0,0,0,7,0,0,0,0.0,0.0,0.0,1,0,6,7,85.7,1,3,0,0,0
+9fcbdbb0,Manchester City,Riyad Mahrez,26,ALG,RW,31-232,31,0,0,0,1,0,0,0,0,21,0,0,0,0.8,0.0,0.1,1,0,16,18,88.9,0,16,3,0,0
+9fcbdbb0,Manchester City,Rúben Dias,3,POR,"CB,LB",25-150,59,0,0,0,0,1,0,1,0,65,2,0,1,0.1,0.1,0.0,1,0,54,58,93.1,2,44,2,0,0
+9fcbdbb0,Manchester City,Kevin De Bruyne,17,BEL,"CM,AM,RM",31-105,76,0,0,0,0,4,1,0,0,48,1,0,0,0.3,0.3,0.0,5,0,26,39,66.7,4,31,3,4,3
+9fcbdbb0,Manchester City,Bernardo Silva,20,POR,CM,28-062,14,0,0,0,0,0,0,0,0,17,1,0,0,0.0,0.0,0.0,1,0,14,16,87.5,0,10,2,0,0
+9fcbdbb0,Manchester City,İlkay Gündoğan,8,GER,"CM,DM,LM",31-352,90,0,0,0,0,2,1,0,0,90,0,0,1,0.1,0.1,0.0,0,0,74,80,92.5,3,51,2,2,0
+9fcbdbb0,Manchester City,Rodri,16,ESP,"CB,DM,CM",26-111,90,0,0,0,0,1,0,0,0,135,2,2,1,0.1,0.1,0.1,1,0,111,124,89.5,8,91,4,0,0
+9fcbdbb0,Manchester City,Sergio Gómez,21,ESP,LB,22-037,29,0,0,0,0,0,0,0,1,25,0,0,0,0.0,0.0,0.0,1,0,22,24,91.7,0,14,0,0,0
+9fcbdbb0,Manchester City,Aymeric Laporte,14,ESP,CB,28-137,87,0,0,0,0,0,0,0,0,75,0,1,0,0.0,0.0,0.0,1,0,65,70,92.9,3,57,2,0,0
+9fcbdbb0,Manchester City,Nathan Aké,6,NED,CB,27-235,3,0,0,0,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0,0,5,5,100.0,1,3,0,0,0
+9fcbdbb0,Manchester City,Manuel Akanji,25,SUI,"WB,CB",27-084,90,0,0,0,0,1,0,0,0,78,3,1,3,0.0,0.0,0.0,2,0,60,64,93.8,2,46,0,0,0
+9fcbdbb0,Manchester City,João Cancelo,7,POR,"WB,RB",28-137,90,0,0,0,0,1,1,0,0,86,1,0,0,0.0,0.0,0.1,3,0,63,79,79.7,2,55,4,1,0
+9fcbdbb0,Manchester City,Ederson,31,BRA,GK,29-055,90,0,0,0,0,0,0,0,0,44,0,0,0,0.0,0.0,0.0,0,0,30,40,75.0,0,28,0,0,0

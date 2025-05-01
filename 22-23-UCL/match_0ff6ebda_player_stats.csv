@@ -1,0 +1,29 @@
+match_id,team,Player,#,Nation,Pos,Age,Min,Gls,Ast,PK,PKatt,Sh,SoT,CrdY,CrdR,Touches,Tkl,Int,Blocks,xG,npxG,xAG,SCA,GCA,Cmp,Att,Cmp%,PrgP,Carries,PrgC,Att,Succ
+0ff6ebda,Real Madrid,Karim Benzema,9,FRA,FW,34-290,90,0,0,0,0,8,4,0,0,70,0,0,1,0.9,0.9,0.8,13,1,50,56,89.3,8,41,3,4,1
+0ff6ebda,Real Madrid,Vinicius Júnior,20,BRA,LW,22-085,90,1,0,0,0,9,3,0,0,73,2,0,1,1.4,1.4,0.0,8,0,40,52,76.9,2,53,8,12,7
+0ff6ebda,Real Madrid,Rodrygo,21,BRA,RW,21-269,79,1,1,0,0,4,2,0,0,54,1,0,0,0.2,0.2,0.5,6,2,44,48,91.7,3,33,3,3,2
+0ff6ebda,Real Madrid,Marco Asensio,11,ESP,RW,26-257,11,0,0,0,0,2,0,0,0,11,0,0,1,0.4,0.4,0.0,1,0,6,7,85.7,0,4,0,0,0
+0ff6ebda,Real Madrid,Toni Kroos,8,GER,LM,32-274,90,0,0,0,0,0,0,0,0,106,2,0,1,0.0,0.0,0.2,9,0,98,103,95.1,12,75,0,0,0
+0ff6ebda,Real Madrid,Aurélien Tchouaméni,18,FRA,CM,22-251,74,0,0,0,0,4,1,0,0,71,0,1,0,0.1,0.1,0.0,2,1,65,66,98.5,8,53,1,0,0
+0ff6ebda,Real Madrid,Eduardo Camavinga,12,FRA,CM,19-329,16,0,0,0,0,0,0,0,0,15,1,0,1,0.0,0.0,0.0,0,0,9,11,81.8,1,10,0,1,1
+0ff6ebda,Real Madrid,Federico Valverde,15,URU,RM,24-075,90,0,0,0,0,6,3,0,0,79,2,2,3,0.3,0.3,0.6,13,0,48,60,80.0,8,45,5,3,2
+0ff6ebda,Real Madrid,Ferland Mendy,23,FRA,LB,27-119,90,0,0,0,0,0,0,0,0,84,1,0,0,0.0,0.0,0.2,1,0,71,77,92.2,6,60,2,3,1
+0ff6ebda,Real Madrid,David Alaba,4,AUT,CB,30-103,90,0,0,0,0,1,0,0,0,85,3,1,2,0.0,0.0,0.4,6,0,68,75,90.7,5,51,3,1,1
+0ff6ebda,Real Madrid,Éder Militão,3,BRA,CB,24-260,90,0,0,0,0,2,0,0,0,72,2,1,0,0.1,0.1,0.0,2,0,57,62,91.9,2,48,1,2,1
+0ff6ebda,Real Madrid,Dani Carvajal,2,ESP,RB,30-267,90,0,0,0,0,0,0,0,0,90,1,0,0,0.0,0.0,0.0,2,0,70,83,84.3,6,45,0,2,0
+0ff6ebda,Real Madrid,Andriy Lunin,13,UKR,GK,23-236,90,0,0,0,0,0,0,0,0,28,0,0,0,0.0,0.0,0.0,0,0,27,28,96.4,0,19,0,0,0
+0ff6ebda,Shakhtar,Oleksandr Zubkov,11,UKR,FW,26-063,66,1,0,0,0,1,1,0,0,21,0,0,0,0.1,0.1,0.0,1,0,11,15,73.3,0,15,0,1,0
+0ff6ebda,Shakhtar,Danylo Sikan,14,UKR,FW,21-172,24,0,0,0,0,0,0,0,0,8,0,0,0,0.0,0.0,0.0,2,0,6,7,85.7,0,6,1,1,0
+0ff6ebda,Shakhtar,Mykhailo Mudryk,10,UKR,LM,21-273,90,0,0,0,0,3,2,1,0,34,2,0,0,0.3,0.3,0.1,4,1,18,20,90.0,3,18,4,5,0
+0ff6ebda,Shakhtar,Heorhiy Sudakov,8,UKR,CM,20-034,87,0,0,0,0,1,0,0,0,65,0,1,0,0.0,0.0,0.1,6,0,54,61,88.5,7,54,3,1,1
+0ff6ebda,Shakhtar,Neven Đurasek,17,CRO,CM,24-051,3,0,0,0,0,0,0,0,0,5,0,0,1,0.0,0.0,0.0,0,0,4,4,100.0,0,2,0,0,0
+0ff6ebda,Shakhtar,Artem Bondarenko,21,UKR,CM,22-045,90,0,0,0,0,0,0,0,0,67,1,3,0,0.0,0.0,0.0,1,0,56,58,96.6,3,42,1,2,0
+0ff6ebda,Shakhtar,Maryan Shved,9,UKR,RM,25-081,66,0,0,0,0,3,0,0,0,29,2,2,0,0.2,0.2,0.0,1,0,13,19,68.4,2,19,6,3,1
+0ff6ebda,Shakhtar,Ivan Petryak,34,UKR,RM,28-206,24,0,0,0,0,1,0,0,0,7,0,0,0,0.0,0.0,0.0,1,0,4,6,66.7,0,5,0,0,0
+0ff6ebda,Shakhtar,Taras Stepanenko,6,UKR,DM,33-058,87,0,0,0,0,0,0,0,0,67,5,3,0,0.0,0.0,0.0,1,0,48,54,88.9,4,44,1,0,0
+0ff6ebda,Shakhtar,Lassina Franck Traoré,2,BFA,FW,21-266,3,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,,0,0,0,0,0
+0ff6ebda,Shakhtar,Bohdan Mykhaylychenko,15,UKR,LB,25-198,90,0,1,0,0,1,0,0,0,66,1,3,1,0.0,0.0,0.1,1,1,40,51,78.4,2,43,3,1,0
+0ff6ebda,Shakhtar,Mykola Matviyenko,22,UKR,CB,26-156,90,0,0,0,0,0,0,0,0,94,4,1,1,0.0,0.0,0.0,0,0,62,72,86.1,0,54,0,2,0
+0ff6ebda,Shakhtar,Valerii Bondar,5,UKR,CB,23-220,90,0,0,0,0,0,0,1,0,56,0,3,6,0.0,0.0,0.0,0,0,42,47,89.4,3,35,0,0,0
+0ff6ebda,Shakhtar,Yukhym Konoplia,26,UKR,RB,23-040,90,0,0,0,0,1,0,0,0,55,2,1,3,0.0,0.0,0.1,3,0,37,46,80.4,2,30,3,0,0
+0ff6ebda,Shakhtar,Anatolii Trubin,81,UKR,GK,21-065,90,0,0,0,0,0,0,0,0,55,0,0,0,0.0,0.0,0.0,1,0,36,46,78.3,0,31,0,0,0
