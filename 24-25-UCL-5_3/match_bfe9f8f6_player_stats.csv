@@ -1,0 +1,32 @@
+match_id,team,Player,#,Nation,Pos,Age,Min,Gls,Ast,PK,PKatt,Sh,SoT,CrdY,CrdR,Touches,Tkl,Int,Blocks,xG,npxG,xAG,SCA,GCA,Cmp,Att,Cmp%,PrgP,Carries,PrgC,Att,Succ
+bfe9f8f6,Atlético Madrid,Julián Álvarez,19,ARG,FW,24-315,72,1,0,0,0,4,1,0,0,38,0,0,2,0.4,0.4,0.0,3,1,26,32,81.3,3,21,4,1,1
+bfe9f8f6,Atlético Madrid,Alexander Sørloth,9,NOR,FW,29-006,18,0,0,0,0,0,0,0,0,6,0,0,0,0.0,0.0,0.0,0,0,4,6,66.7,1,2,1,0,0
+bfe9f8f6,Atlético Madrid,Antoine Griezmann,7,FRA,FW,33-265,72,2,0,0,0,3,3,0,0,50,0,1,0,0.8,0.8,0.0,4,0,35,43,81.4,4,26,0,2,1
+bfe9f8f6,Atlético Madrid,Conor Gallagher,4,ENG,CM,24-309,18,0,0,0,0,0,0,0,0,15,0,0,1,0.0,0.0,0.0,1,0,10,12,83.3,0,8,0,3,1
+bfe9f8f6,Atlético Madrid,Samuel Lino,12,BRA,LM,24-354,72,0,1,0,0,6,1,0,0,53,3,0,1,0.6,0.6,0.2,5,1,38,41,92.7,5,34,9,0,0
+bfe9f8f6,Atlético Madrid,Rodrigo Riquelme,17,ESP,LW,24-253,18,0,0,0,0,1,0,0,0,22,1,0,0,0.0,0.0,0.1,2,0,14,18,77.8,3,15,4,0,0
+bfe9f8f6,Atlético Madrid,Pablo Barrios,8,ESP,CM,21-179,45,0,0,0,0,1,0,0,0,57,0,0,1,0.0,0.0,0.0,5,2,46,53,86.8,10,39,0,1,0
+bfe9f8f6,Atlético Madrid,Koke,6,ESP,CM,32-338,45,0,1,0,0,0,0,0,0,64,2,1,0,0.0,0.0,0.4,4,1,57,61,93.4,5,47,0,0,0
+bfe9f8f6,Atlético Madrid,Rodrigo De Paul,5,ARG,CM,30-201,90,0,0,0,0,1,0,0,0,124,2,2,1,0.0,0.0,0.1,3,0,97,117,82.9,17,89,5,2,1
+bfe9f8f6,Atlético Madrid,Giuliano Simeone,22,ARG,"RM,RW",21-359,90,0,0,0,0,0,0,0,0,43,1,1,2,0.0,0.0,0.0,0,0,31,34,91.2,4,23,2,1,0
+bfe9f8f6,Atlético Madrid,Javi Galán,21,ESP,LB,30-022,90,0,0,0,0,0,0,0,0,72,1,1,1,0.0,0.0,0.0,1,0,58,66,87.9,3,49,4,3,3
+bfe9f8f6,Atlético Madrid,Clément Lenglet,15,FRA,CB,29-177,90,0,0,0,0,0,0,0,0,74,0,1,1,0.0,0.0,0.0,2,0,68,71,95.8,4,55,0,0,0
+bfe9f8f6,Atlético Madrid,José María Giménez,2,URU,CB,29-326,90,0,0,0,0,1,0,0,0,88,1,3,0,0.1,0.1,0.0,0,0,73,77,94.8,8,60,2,0,0
+bfe9f8f6,Atlético Madrid,Marcos Llorente,14,ESP,RB,29-316,90,0,1,0,0,2,1,0,0,94,4,0,1,0.0,0.0,0.8,3,1,72,84,85.7,4,63,3,0,0
+bfe9f8f6,Atlético Madrid,Jan Oblak,13,SVN,GK,31-339,90,0,0,0,0,0,0,0,0,18,0,0,0,0.0,0.0,0.0,0,0,14,16,87.5,0,10,0,0,0
+bfe9f8f6,Slovan Bratislava,Dávid Strelec,13,SVK,FW,23-251,90,1,0,1,1,0,0,0,0,36,1,1,3,0.8,0.0,0.1,2,1,13,23,56.5,1,15,1,2,1
+bfe9f8f6,Slovan Bratislava,Róbert Mak,21,SVK,LW,33-278,71,0,0,0,0,0,0,0,0,29,0,0,2,0.0,0.0,0.0,0,0,16,20,80.0,1,9,0,2,0
+bfe9f8f6,Slovan Bratislava,Idjessi Metsoko,93,FRA,"RW,FW,LM",22-272,19,0,0,0,0,0,0,0,0,10,0,1,0,0.0,0.0,0.0,0,0,6,6,100.0,1,3,0,3,1
+bfe9f8f6,Slovan Bratislava,Tigran Barseghyan,11,ARM,RW,31-080,34,0,0,0,0,1,0,0,0,15,0,0,0,0.1,0.1,0.0,0,0,11,13,84.6,1,8,1,1,0
+bfe9f8f6,Slovan Bratislava,Nino Marcelli,18,SVK,"RW,LW,RM",19-196,56,0,0,0,0,1,0,0,0,27,0,0,0,0.0,0.0,0.0,1,0,17,22,77.3,1,9,0,0,0
+bfe9f8f6,Slovan Bratislava,Jurij Medvedev,17,,LM,28-176,71,0,0,0,0,0,0,0,0,27,1,0,0,0.0,0.0,0.0,0,0,17,20,85.0,1,7,0,0,0
+bfe9f8f6,Slovan Bratislava,Zuberu Sharani,23,GHA,"LM,LB,LW",24-339,19,0,0,0,0,1,0,0,0,9,0,0,0,0.0,0.0,0.0,1,0,5,5,100.0,2,4,0,1,1
+bfe9f8f6,Slovan Bratislava,Kyriakos Savvidis,88,GRE,CM,29-174,83,0,0,0,0,0,0,0,0,49,0,1,1,0.0,0.0,0.0,0,0,42,44,95.5,4,23,2,2,1
+bfe9f8f6,Slovan Bratislava,Alen Mustafić,20,BIH,CM,25-159,7,0,0,0,0,0,0,0,0,13,1,0,0,0.0,0.0,0.0,1,0,12,13,92.3,0,6,0,0,0
+bfe9f8f6,Slovan Bratislava,Juraj Kucka,33,SVK,CM,37-289,90,0,0,0,0,0,0,0,0,59,4,2,0,0.0,0.0,0.0,1,0,44,51,86.3,5,20,2,1,1
+bfe9f8f6,Slovan Bratislava,César Blackman,28,PAN,"RM,RB",26-253,90,0,0,0,0,0,0,0,0,55,0,0,1,0.0,0.0,0.0,1,1,35,44,79.5,4,22,3,5,0
+bfe9f8f6,Slovan Bratislava,Siemen Voet,2,BEL,CB,24-312,90,0,0,0,0,1,1,0,0,84,0,3,3,0.1,0.1,0.0,1,0,59,69,85.5,5,33,0,0,0
+bfe9f8f6,Slovan Bratislava,Guram Kashia,4,GEO,CB,37-160,90,0,0,0,0,0,0,0,0,93,0,2,3,0.0,0.0,0.0,0,0,75,84,89.3,3,47,2,1,1
+bfe9f8f6,Slovan Bratislava,Kenan Bajrić,12,SVN,CB,29-357,83,0,0,0,0,0,0,0,0,59,2,2,1,0.0,0.0,0.0,0,0,41,52,78.8,4,22,2,0,0
+bfe9f8f6,Slovan Bratislava,Vladimír Weiss,7,SVK,LM,35-011,7,0,0,0,0,0,0,0,0,13,0,0,0,0.0,0.0,0.0,0,0,10,12,83.3,3,9,0,0,0
+bfe9f8f6,Slovan Bratislava,Dominik Takáč,71,SVK,GK,25-334,90,0,0,0,0,0,0,0,0,38,0,0,0,0.0,0.0,0.0,0,0,31,35,88.6,0,14,0,0,0

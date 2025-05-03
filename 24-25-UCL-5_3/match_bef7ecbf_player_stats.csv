@@ -1,0 +1,31 @@
+match_id,team,Player,#,Nation,Pos,Age,Min,Gls,Ast,PK,PKatt,Sh,SoT,CrdY,CrdR,Touches,Tkl,Int,Blocks,xG,npxG,xAG,SCA,GCA,Cmp,Att,Cmp%,PrgP,Carries,PrgC,Att,Succ
+bef7ecbf,Real Madrid,Vinicius Júnior,7,BRA,FW,24-222,89,0,0,0,0,3,1,0,0,37,1,0,0,0.2,0.2,0.0,3,0,20,26,76.9,2,25,7,5,2
+bef7ecbf,Real Madrid,Endrick,16,BRA,FW,18-213,1,0,0,0,0,0,0,0,0,1,0,0,0,0.0,0.0,0.0,0,0,1,1,100.0,0,0,0,0,0
+bef7ecbf,Real Madrid,Kylian Mbappé,9,FRA,FW,26-061,77,3,0,0,0,7,5,0,0,30,0,0,0,1.3,1.3,0.2,6,1,16,23,69.6,1,21,5,2,2
+bef7ecbf,Real Madrid,Brahim Díaz,21,MAR,RM,25-200,13,0,0,0,0,0,0,0,0,3,0,0,0,0.0,0.0,0.0,0,0,3,3,100.0,1,2,0,0,0
+bef7ecbf,Real Madrid,Jude Bellingham,5,ENG,LM,21-235,90,0,0,0,0,1,0,1,0,66,0,1,0,0.0,0.0,0.2,6,2,52,58,89.7,3,44,2,4,2
+bef7ecbf,Real Madrid,Dani Ceballos,19,ESP,CM,28-196,77,0,0,0,0,0,0,0,0,71,2,0,1,0.0,0.0,0.0,2,0,55,62,88.7,3,43,0,1,0
+bef7ecbf,Real Madrid,Eduardo Camavinga,6,FRA,CM,22-101,13,0,0,0,0,0,0,0,0,5,0,0,1,0.0,0.0,0.0,0,0,1,1,100.0,0,1,0,0,0
+bef7ecbf,Real Madrid,Aurélien Tchouaméni,14,FRA,CM,25-023,82,0,0,0,0,0,0,0,0,63,3,3,1,0.0,0.0,0.0,1,0,50,55,90.9,3,40,0,0,0
+bef7ecbf,Real Madrid,Luka Modrić,10,CRO,CM,39-163,8,0,0,0,0,0,0,0,0,7,1,0,0,0.0,0.0,0.0,0,0,4,5,80.0,1,3,0,0,0
+bef7ecbf,Real Madrid,Rodrygo,11,BRA,"RM,FW",24-041,90,0,1,0,0,3,2,0,0,53,4,1,3,0.2,0.2,0.6,4,1,33,35,94.3,3,30,6,5,2
+bef7ecbf,Real Madrid,Ferland Mendy,23,FRA,LB,29-256,90,0,0,0,0,0,0,0,0,51,0,1,1,0.0,0.0,0.0,0,0,42,44,95.5,1,31,1,0,0
+bef7ecbf,Real Madrid,Antonio Rüdiger,22,GER,CB,31-353,90,0,0,0,0,0,0,0,0,62,0,1,1,0.0,0.0,0.0,0,0,49,54,90.7,0,43,0,0,0
+bef7ecbf,Real Madrid,Raúl Asencio,35,ESP,"CB,RB",22-006,90,0,1,0,0,0,0,0,0,43,2,0,1,0.0,0.0,0.1,2,1,36,38,94.7,0,25,0,0,0
+bef7ecbf,Real Madrid,Federico Valverde,8,URU,RB,26-212,89,0,1,0,0,1,0,0,0,76,2,2,3,0.0,0.0,0.7,5,1,61,66,92.4,5,46,0,0,0
+bef7ecbf,Real Madrid,David Alaba,4,AUT,CB,32-240,1,0,0,0,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0,0,2,2,100.0,0,1,0,0,0
+bef7ecbf,Real Madrid,Thibaut Courtois,1,BEL,GK,32-284,90,0,0,0,0,0,0,0,0,46,0,0,0,0.0,0.0,0.0,0,0,28,42,66.7,0,35,0,0,0
+bef7ecbf,Manchester City,Omar Marmoush,7,EGY,FW,26-012,90,0,0,0,0,2,0,0,0,30,2,0,1,0.2,0.2,0.0,3,1,11,18,61.1,0,16,3,4,0
+bef7ecbf,Manchester City,Sávio,26,BRA,"LM,FW",20-315,90,0,0,0,0,1,0,0,0,28,1,0,0,0.1,0.1,0.0,0,0,18,23,78.3,2,19,3,1,1
+bef7ecbf,Manchester City,İlkay Gündoğan,19,GER,AM,34-118,76,0,0,0,0,0,0,1,0,66,0,0,1,0.0,0.0,0.1,2,0,55,61,90.2,6,47,4,1,0
+bef7ecbf,Manchester City,Mateo Kovačić,8,CRO,AM,30-289,14,0,0,0,0,1,1,0,0,23,0,0,0,0.0,0.0,0.0,0,0,21,22,95.5,2,21,1,0,0
+bef7ecbf,Manchester City,Bernardo Silva,20,POR,"RM,LM",30-193,90,0,0,0,0,1,0,0,0,53,2,0,4,0.0,0.0,0.1,4,0,41,44,93.2,2,36,5,0,0
+bef7ecbf,Manchester City,Phil Foden,47,ENG,"RM,FW",24-267,76,0,0,0,0,3,1,0,0,46,0,1,1,0.1,0.1,0.1,1,0,33,38,86.8,5,22,4,1,0
+bef7ecbf,Manchester City,James Mcatee,87,ENG,FW,22-124,14,0,0,0,0,1,0,0,0,7,1,0,0,0.0,0.0,0.0,3,0,5,6,83.3,2,6,1,0,0
+bef7ecbf,Manchester City,Nicolás González,14,ESP,DM,23-047,90,1,0,0,0,1,1,1,0,87,2,0,1,0.9,0.9,0.0,2,0,71,79,89.9,6,52,2,0,0
+bef7ecbf,Manchester City,Joško Gvardiol,24,CRO,LB,23-027,90,0,0,0,0,1,0,0,0,65,2,0,0,0.0,0.0,0.0,0,0,51,56,91.1,4,36,4,2,1
+bef7ecbf,Manchester City,Rúben Dias,3,POR,CB,27-281,90,0,0,0,0,0,0,0,0,82,1,3,4,0.0,0.0,0.0,1,0,63,73,86.3,3,49,1,0,0
+bef7ecbf,Manchester City,John Stones,5,ENG,CB,30-267,7,0,0,0,0,0,0,0,0,9,0,0,0,0.0,0.0,0.0,0,0,9,9,100.0,0,7,1,0,0
+bef7ecbf,Manchester City,Nathan Aké,6,NED,CB,30-001,83,0,0,0,0,0,0,0,0,44,0,0,0,0.0,0.0,0.0,0,0,40,41,97.6,5,24,1,0,0
+bef7ecbf,Manchester City,Abdukodir Khusanov,45,UZB,RB,20-356,90,0,0,0,0,1,1,0,0,72,1,1,0,0.0,0.0,0.0,4,0,59,64,92.2,5,38,1,1,1
+bef7ecbf,Manchester City,Ederson,31,BRA,GK,31-186,90,0,0,0,0,0,0,0,0,23,0,0,0,0.0,0.0,0.0,0,0,18,19,94.7,0,11,0,0,0

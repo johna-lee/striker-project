@@ -1,0 +1,33 @@
+match_id,team,Player,#,Nation,Pos,Age,Min,Gls,Ast,PK,PKatt,Sh,SoT,CrdY,CrdR,Touches,Tkl,Int,Blocks,xG,npxG,xAG,SCA,GCA,Cmp,Att,Cmp%,PrgP,Carries,PrgC,Att,Succ
+9dc1db6f,Leverkusen,Patrik Schick,14,CZE,FW,29-005,89,0,0,0,0,2,0,0,0,26,0,0,0,0.2,0.2,0.1,2,0,18,20,90.0,1,12,0,2,1
+9dc1db6f,Leverkusen,Artem Stepanov,29,UKR,FW,17-172,1,0,0,0,0,0,0,0,0,3,0,0,0,0.0,0.0,0.0,0,0,2,2,100.0,0,2,0,0,0
+9dc1db6f,Leverkusen,Florian Wirtz,10,GER,AM,21-271,89,1,0,0,0,6,2,0,0,98,0,1,2,0.3,0.3,0.5,11,0,64,74,86.5,7,54,4,5,1
+9dc1db6f,Leverkusen,Jonas Hofmann,7,GER,AM,32-199,1,0,0,0,0,0,0,0,0,1,0,0,0,0.0,0.0,0.0,0,0,0,1,0.0,0,1,0,0,0
+9dc1db6f,Leverkusen,Nathan Tella,19,NGA,"AM,LW",25-208,82,1,0,0,0,4,2,0,0,42,1,1,1,0.4,0.4,0.0,2,0,22,26,84.6,2,20,2,2,0
+9dc1db6f,Leverkusen,Robert Andrich,8,GER,DM,30-129,8,0,0,0,0,0,0,1,0,8,0,0,0,0.0,0.0,0.0,0,0,7,8,87.5,1,2,0,0,0
+9dc1db6f,Leverkusen,Granit Xhaka,34,SUI,"DM,CM",32-124,90,0,0,0,0,3,0,1,0,113,3,0,1,0.2,0.2,0.0,8,0,97,104,93.3,13,57,2,0,0
+9dc1db6f,Leverkusen,Exequiel Palacios,25,ARG,"CM,DM",26-116,82,0,0,0,0,2,1,0,0,102,2,1,1,0.1,0.1,0.0,4,0,89,92,96.7,11,50,2,0,0
+9dc1db6f,Leverkusen,Aleix García,24,ESP,LW,27-215,8,0,0,0,0,1,1,0,0,10,0,0,0,0.0,0.0,0.0,0,0,8,9,88.9,0,5,0,0,0
+9dc1db6f,Leverkusen,Álex Grimaldo,20,ESP,"LB,WB",29-131,90,0,0,0,0,6,4,0,0,101,0,0,1,0.5,0.5,0.3,8,1,80,93,86.0,5,64,3,0,0
+9dc1db6f,Leverkusen,Jeremie Frimpong,30,NED,"WB,RW",24-050,87,0,1,0,0,0,0,0,0,55,1,0,0,0.0,0.0,0.1,4,1,39,48,81.3,1,30,8,5,2
+9dc1db6f,Leverkusen,Arthur,13,BRA,RW,21-318,3,0,0,0,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0,0,1,2,50.0,0,1,0,0,0
+9dc1db6f,Leverkusen,Edmond Tapsoba,12,BFA,CB,25-362,90,0,0,0,0,1,0,0,0,114,0,1,0,0.0,0.0,0.0,3,0,103,110,93.6,15,67,4,0,0
+9dc1db6f,Leverkusen,Jonathan Tah,4,GER,CB,28-353,90,0,0,0,0,0,0,0,0,92,0,0,0,0.0,0.0,0.1,2,0,84,88,95.5,3,64,3,0,0
+9dc1db6f,Leverkusen,Nordi Mukiele,23,FRA,"RB,CB",27-089,90,0,0,0,0,1,0,0,0,106,1,1,1,0.0,0.0,0.0,2,1,84,96,87.5,6,51,4,1,0
+9dc1db6f,Leverkusen,Matej Kovar,17,CZE,GK,24-257,90,0,0,0,0,0,0,0,0,34,0,0,0,0.0,0.0,0.0,0,0,30,34,88.2,0,23,0,0,0
+9dc1db6f,Sparta Prague,Veljko Birmančević,14,SRB,FW,26-330,89,0,0,0,0,2,0,1,0,22,1,2,2,0.1,0.1,0.1,1,0,4,7,57.1,0,11,2,0,0
+9dc1db6f,Sparta Prague,Lukáš Penxa,54,,WB,20-237,1,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,,0,0,0,0,0
+9dc1db6f,Sparta Prague,Victor Olatunji,7,NGA,FW,25-146,66,0,0,0,0,2,1,1,0,18,0,0,0,0.2,0.2,0.0,2,0,2,7,28.6,1,11,2,3,2
+9dc1db6f,Sparta Prague,Lukáš Haraslín,22,SVK,FW,28-248,24,0,0,0,0,1,0,0,0,11,0,1,0,0.0,0.0,0.0,1,0,5,5,100.0,1,8,2,3,2
+9dc1db6f,Sparta Prague,Qazim Laçi,20,ALB,CM,29-010,84,0,0,0,0,2,0,0,0,54,3,2,1,0.0,0.0,0.2,4,0,38,44,86.4,3,40,2,4,4
+9dc1db6f,Sparta Prague,Kryštof Daněk,13,CZE,CM,22-024,6,0,0,0,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0,0,3,3,100.0,0,3,0,0,0
+9dc1db6f,Sparta Prague,Kaan Kairinen,6,FIN,CM,26-038,90,0,0,0,0,1,0,0,0,65,2,0,1,0.1,0.1,0.1,3,0,50,57,87.7,3,39,0,1,1
+9dc1db6f,Sparta Prague,Lukáš Sadílek,18,CZE,CM,28-251,90,0,0,0,0,0,0,0,0,35,3,1,0,0.0,0.0,0.0,3,0,24,29,82.8,1,25,5,1,1
+9dc1db6f,Sparta Prague,Jaroslav Zelený,30,CZE,WB,32-162,89,0,0,0,0,1,0,0,0,44,2,0,1,0.0,0.0,0.1,2,0,27,34,79.4,2,26,0,1,1
+9dc1db6f,Sparta Prague,Ermal Krasniqi,29,KVX,"FW,WB",26-144,1,0,0,0,0,0,0,0,0,1,0,0,0,0.0,0.0,0.0,0,0,0,1,0.0,0,1,0,0,0
+9dc1db6f,Sparta Prague,Tomáš Wiesner,28,CZE,WB,27-196,84,0,0,0,0,2,0,0,0,35,3,0,0,0.1,0.1,0.1,2,0,15,23,65.2,2,21,2,1,0
+9dc1db6f,Sparta Prague,Martin Suchomel,2,CZE,WB,22-140,6,0,0,0,0,0,0,0,0,1,0,0,0,0.0,0.0,0.0,0,0,1,1,100.0,0,1,0,0,0
+9dc1db6f,Sparta Prague,Asger Sørensen,25,DEN,CB,28-238,90,0,0,0,0,0,0,0,0,56,0,0,2,0.0,0.0,0.0,1,0,37,47,78.7,5,28,0,0,0
+9dc1db6f,Sparta Prague,Adam Sevinsky,19,CZE,CB,20-224,90,0,0,0,0,0,0,0,0,33,1,1,0,0.0,0.0,0.1,2,0,20,25,80.0,1,17,0,0,0
+9dc1db6f,Sparta Prague,Martin Vitík,41,CZE,CB,22-008,90,0,0,0,0,1,0,0,0,38,3,1,3,0.1,0.1,0.0,1,0,18,23,78.3,2,19,0,0,0
+9dc1db6f,Sparta Prague,Peter Vindahl Jensen,1,DEN,GK,26-348,90,0,0,0,0,0,0,0,0,37,0,0,0,0.0,0.0,0.0,0,0,22,33,66.7,0,27,0,0,0

@@ -1,0 +1,31 @@
+match_id,team,Player,#,Nation,Pos,Age,Min,Gls,Ast,PK,PKatt,Sh,SoT,CrdY,CrdR,Touches,Tkl,Int,Blocks,xG,npxG,xAG,SCA,GCA,Cmp,Att,Cmp%,PrgP,Carries,PrgC,Att,Succ
+bf1ff0cd,Dinamo Zagreb,Sandro Kulenović,17,CRO,FW,25-006,90,0,0,0,0,2,0,1,0,25,2,0,1,0.2,0.2,0.0,1,0,8,15,53.3,0,8,0,0,0
+bf1ff0cd,Dinamo Zagreb,Marko Pjaca,20,CRO,LW,29-218,81,0,0,0,0,2,1,0,0,36,1,3,1,0.1,0.1,0.0,3,0,12,24,50.0,1,19,1,2,0
+bf1ff0cd,Dinamo Zagreb,Arbër Hoxha,11,ALB,LW,26-065,9,0,0,0,0,0,0,0,0,1,0,0,0,0.0,0.0,0.0,0,0,1,1,100.0,0,1,0,0,0
+bf1ff0cd,Dinamo Zagreb,Dario Špikić,77,CRO,RW,25-263,72,0,0,0,0,0,0,0,0,30,2,0,2,0.0,0.0,0.1,1,0,15,20,75.0,2,14,3,2,2
+bf1ff0cd,Dinamo Zagreb,Nathanael Mbuku,21,COD,RW,22-269,18,0,0,0,0,0,0,0,0,6,0,0,0,0.0,0.0,0.0,1,0,3,4,75.0,2,5,1,0,0
+bf1ff0cd,Dinamo Zagreb,Martin Baturina,10,CRO,AM,21-298,82,0,0,0,0,3,1,0,0,33,0,0,2,0.1,0.1,0.0,2,0,17,22,77.3,4,19,6,3,1
+bf1ff0cd,Dinamo Zagreb,Luka Stojkovic,7,CRO,AM,21-043,8,0,0,0,0,0,0,0,0,3,0,0,0,0.0,0.0,0.0,0,0,1,3,33.3,0,0,0,0,0
+bf1ff0cd,Dinamo Zagreb,Marko Rog,30,CRO,DM,29-144,90,0,0,0,0,1,0,1,0,46,1,0,1,0.0,0.0,0.1,3,0,30,38,78.9,2,20,1,2,0
+bf1ff0cd,Dinamo Zagreb,Lukas Kačavenda,8,CRO,DM,21-283,90,0,0,0,0,0,0,0,0,40,3,1,1,0.0,0.0,0.1,3,0,26,30,86.7,1,13,2,2,0
+bf1ff0cd,Dinamo Zagreb,Ronaël Pierre-Gabriel,18,FRA,LB,26-180,90,0,0,0,0,0,0,0,0,37,5,2,1,0.0,0.0,0.0,1,0,15,19,78.9,0,13,1,1,0
+bf1ff0cd,Dinamo Zagreb,Kévin Théophile-Catherine,28,FRA,CB,35-043,90,0,0,0,0,0,0,0,0,31,2,2,1,0.0,0.0,0.0,0,0,15,22,68.2,1,13,0,0,0
+bf1ff0cd,Dinamo Zagreb,Maxime Bernauer,6,FRA,CB,26-162,90,0,0,0,0,2,0,0,0,53,1,0,2,0.1,0.1,0.0,1,0,33,41,80.5,3,30,0,0,0
+bf1ff0cd,Dinamo Zagreb,Stefan Ristovski,22,MKD,RB,32-302,90,0,0,0,0,1,0,0,0,54,1,2,0,0.0,0.0,0.1,1,0,35,46,76.1,4,16,1,1,1
+bf1ff0cd,Dinamo Zagreb,Danijel Zagorac,1,CRO,GK,37-307,90,0,0,0,0,0,0,0,0,40,0,1,0,0.0,0.0,0.0,0,0,26,37,70.3,0,18,0,0,0
+bf1ff0cd,Celtic,Kyogo Furuhashi,8,JPN,FW,29-325,71,0,0,0,0,0,0,0,0,6,0,0,0,0.0,0.0,0.0,0,0,3,4,75.0,0,3,0,1,0
+bf1ff0cd,Celtic,Adam Idah,9,IRL,FW,23-303,19,0,0,0,0,1,0,0,0,8,0,0,0,0.1,0.1,0.0,0,0,3,6,50.0,0,6,1,1,1
+bf1ff0cd,Celtic,Daizen Maeda,38,JPN,LW,27-051,72,0,0,0,0,0,0,1,0,32,2,1,3,0.0,0.0,0.0,0,0,16,21,76.2,0,19,1,2,2
+bf1ff0cd,Celtic,James Forrest,49,SCO,LW,33-156,18,0,0,0,0,1,0,0,0,8,0,0,0,0.1,0.1,0.0,0,0,4,5,80.0,2,4,1,0,0
+bf1ff0cd,Celtic,Nicolas-Gerrit Kühn,10,GER,RW,24-344,90,0,0,0,0,1,0,0,0,46,1,1,2,0.1,0.1,0.1,3,0,23,32,71.9,3,34,3,8,5
+bf1ff0cd,Celtic,Reo Hatate,41,JPN,LM,27-019,64,0,0,0,0,1,0,0,0,53,2,0,2,0.0,0.0,0.0,1,0,32,46,69.6,5,31,2,3,1
+bf1ff0cd,Celtic,Luke McCowan,14,SCO,AM,27-001,26,0,0,0,0,1,1,0,0,21,0,0,2,0.0,0.0,0.0,1,0,14,18,77.8,2,11,1,0,0
+bf1ff0cd,Celtic,Callum McGregor,42,SCO,"CM,DM",31-179,90,0,0,0,0,0,0,0,0,88,1,1,1,0.0,0.0,0.0,2,0,78,80,97.5,7,66,1,1,1
+bf1ff0cd,Celtic,Paulo Bernardo,28,POR,RM,22-321,64,0,0,0,0,1,0,0,0,53,4,0,0,0.1,0.1,0.0,1,0,35,46,76.1,7,14,1,1,1
+bf1ff0cd,Celtic,Arne Engels,27,BEL,DM,21-093,26,0,0,0,0,0,0,0,0,15,0,0,0,0.0,0.0,0.0,0,0,6,12,50.0,0,9,1,1,1
+bf1ff0cd,Celtic,Greg Taylor,3,SCO,LB,27-035,90,0,0,0,0,0,0,1,0,102,4,0,2,0.0,0.0,0.0,0,0,75,89,84.3,6,56,4,2,1
+bf1ff0cd,Celtic,Auston Trusty,6,USA,CB,26-120,90,0,0,0,0,0,0,0,0,122,3,0,2,0.0,0.0,0.0,0,0,106,111,95.5,14,90,2,0,0
+bf1ff0cd,Celtic,Cameron Carter-Vickers,20,USA,CB,26-345,90,0,0,0,0,1,0,0,0,110,0,2,0,0.1,0.1,0.0,3,0,100,107,93.5,10,89,7,0,0
+bf1ff0cd,Celtic,Alistair Johnston,2,CAN,RB,26-063,45,0,0,0,0,0,0,0,0,36,1,1,0,0.0,0.0,0.0,0,0,25,32,78.1,2,16,0,1,1
+bf1ff0cd,Celtic,Anthony Ralston,56,SCO,RB,26-024,45,0,0,0,0,0,0,1,0,45,2,2,0,0.0,0.0,0.1,2,0,34,40,85.0,1,28,0,1,1
+bf1ff0cd,Celtic,Kasper Schmeichel,1,DEN,GK,38-035,90,0,0,0,0,0,0,0,0,46,0,0,0,0.0,0.0,0.0,0,0,41,42,97.6,0,26,0,0,0
