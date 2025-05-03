@@ -1,0 +1,31 @@
+match_id,team,Player,#,Nation,Pos,Age,Min,Gls,Ast,PK,PKatt,Sh,SoT,CrdY,CrdR,Touches,Tkl,Int,Blocks,xG,npxG,xAG,SCA,GCA,Cmp,Att,Cmp%,PrgP,Carries,PrgC,Att,Succ
+4a4b95b7,FC Copenhagen,Viktor Claesson,7,SWE,"FW,LM",31-310,90,0,0,0,0,3,1,0,0,40,1,1,1,0.4,0.4,0.0,3,1,27,33,81.8,3,18,1,0,0
+4a4b95b7,FC Copenhagen,Elias Achouri,30,TUN,LW,24-271,77,0,0,0,0,0,0,0,0,38,1,0,1,0.0,0.0,0.2,2,0,24,33,72.7,3,27,2,1,0
+4a4b95b7,FC Copenhagen,Jordan Larsson,11,SWE,LW,26-141,13,0,0,0,0,0,0,0,0,7,0,0,0,0.0,0.0,0.0,0,0,3,4,75.0,1,5,0,1,0
+4a4b95b7,FC Copenhagen,Mohamed Elyounoussi,10,NOR,RW,29-096,62,1,0,0,0,1,1,0,0,27,2,0,0,0.2,0.2,0.0,2,1,16,21,76.2,3,20,2,1,1
+4a4b95b7,FC Copenhagen,Roony Bardghji,40,SWE,RW,17-358,28,1,0,0,0,2,1,0,0,12,0,0,0,0.2,0.2,0.0,2,0,8,10,80.0,2,10,3,3,3
+4a4b95b7,FC Copenhagen,Diogo Gonçalves,9,POR,LM,26-275,69,1,1,1,1,3,1,0,0,33,0,1,0,0.9,0.1,0.2,3,1,17,24,70.8,2,14,1,2,1
+4a4b95b7,FC Copenhagen,Orri Steinn Óskarsson,18,ISL,FW,19-071,21,0,0,0,0,0,0,0,0,12,1,0,1,0.0,0.0,0.0,0,0,6,9,66.7,0,9,0,0,0
+4a4b95b7,FC Copenhagen,Rasmus Falk,33,DEN,CM,31-297,90,0,1,0,0,1,1,0,0,93,6,0,1,0.0,0.0,0.5,7,2,73,79,92.4,12,68,3,0,0
+4a4b95b7,FC Copenhagen,Lukas Lerager,12,DEN,RM,30-119,90,1,0,0,0,2,1,0,0,25,4,1,1,0.5,0.5,0.0,0,0,9,12,75.0,1,11,0,1,0
+4a4b95b7,FC Copenhagen,Elias Jelert,19,DEN,"LB,RB",20-149,90,0,0,0,0,0,0,0,0,72,2,0,0,0.0,0.0,0.0,3,0,57,66,86.4,6,40,5,2,1
+4a4b95b7,FC Copenhagen,Kevin Diks,2,IDN,CB,27-033,90,0,0,0,0,1,0,0,0,94,0,1,0,0.0,0.0,0.1,1,0,89,90,98.9,4,70,5,0,0
+4a4b95b7,FC Copenhagen,Denis Vavro,3,SVK,CB,27-212,77,0,0,0,0,2,1,1,0,71,0,0,0,0.0,0.0,0.0,0,0,60,67,89.6,8,41,0,0,0
+4a4b95b7,FC Copenhagen,Nicolai Boilesen,20,DEN,CB,31-265,13,0,0,0,0,0,0,0,0,14,1,0,0,0.0,0.0,0.0,0,0,12,13,92.3,1,9,0,0,0
+4a4b95b7,FC Copenhagen,Peter Ankersen,22,DEN,RB,33-047,69,0,0,0,0,0,0,0,0,42,0,0,0,0.0,0.0,0.0,2,1,33,42,78.6,2,22,0,0,0
+4a4b95b7,FC Copenhagen,Christian Sørensen,6,DEN,LB,31-094,21,0,0,0,0,0,0,0,0,42,0,0,0,0.0,0.0,0.0,2,1,33,41,80.5,4,21,0,0,0
+4a4b95b7,FC Copenhagen,Kamil Grabara,1,POL,GK,24-304,90,0,0,0,0,0,0,0,0,30,0,0,0,0.0,0.0,0.0,0,0,18,25,72.0,0,10,0,0,0
+4a4b95b7,Manchester Utd,Rasmus Højlund,11,DEN,FW,20-277,83,2,0,0,0,3,3,0,0,19,0,0,0,1.9,1.9,0.0,2,0,8,14,57.1,0,13,0,1,0
+4a4b95b7,Manchester Utd,Mason Mount,7,ENG,FW,24-302,7,0,0,0,0,0,0,0,0,3,1,0,0,0.0,0.0,0.0,0,0,2,2,100.0,0,0,0,0,0
+4a4b95b7,Manchester Utd,Alejandro Garnacho,17,ARG,"LM,LW",19-130,90,0,0,0,0,1,1,0,0,41,0,0,1,0.2,0.2,0.0,3,1,25,28,89.3,2,27,6,9,2
+4a4b95b7,Manchester Utd,Marcus Rashford,10,ENG,RW,26-008,41,0,0,0,0,0,0,0,1,19,1,0,0,0.0,0.0,0.0,0,0,12,17,70.6,2,8,0,1,1
+4a4b95b7,Manchester Utd,Bruno Fernandes,8,POR,"RM,AM",29-061,90,1,0,1,1,1,1,0,0,60,1,1,1,0.8,0.0,0.4,6,1,30,46,65.2,4,25,3,5,1
+4a4b95b7,Manchester Utd,Christian Eriksen,14,DEN,DM,31-267,45,0,0,0,0,0,0,0,0,30,0,2,1,0.0,0.0,0.0,0,0,20,24,83.3,5,17,0,0,0
+4a4b95b7,Manchester Utd,Sofyan Amrabat,4,MAR,CM,27-079,45,0,0,0,0,0,0,0,0,31,1,0,0,0.0,0.0,0.0,0,0,25,29,86.2,1,19,0,1,0
+4a4b95b7,Manchester Utd,Scott McTominay,39,SCO,"CM,DM",26-335,90,0,1,0,0,1,0,0,0,45,0,0,0,0.1,0.1,0.9,1,1,36,39,92.3,3,31,1,1,1
+4a4b95b7,Manchester Utd,Diogo Dalot,20,POR,LB,24-235,90,0,0,0,0,1,1,0,0,66,2,0,1,0.0,0.0,0.0,0,0,51,60,85.0,1,46,3,1,0
+4a4b95b7,Manchester Utd,Jonny Evans,35,NIR,CB,35-309,15,0,0,0,0,0,0,0,0,17,0,0,0,0.0,0.0,0.0,0,0,16,17,94.1,1,14,0,0,0
+4a4b95b7,Manchester Utd,Raphaël Varane,19,FRA,CB,30-197,75,0,0,0,0,0,0,0,0,62,2,1,1,0.0,0.0,0.0,0,0,42,52,80.8,0,38,0,0,0
+4a4b95b7,Manchester Utd,Harry Maguire,5,ENG,CB,30-248,90,0,0,0,0,1,1,1,0,83,1,1,1,0.1,0.1,0.0,0,0,66,73,90.4,4,53,0,0,0
+4a4b95b7,Manchester Utd,Aaron Wan-Bissaka,29,ENG,RB,25-347,90,0,0,0,0,0,0,0,0,78,3,4,0,0.0,0.0,0.0,1,1,56,65,86.2,6,47,1,1,1
+4a4b95b7,Manchester Utd,André Onana,24,CMR,GK,27-220,90,0,0,0,0,0,0,0,0,54,0,1,0,0.0,0.0,0.0,0,0,43,51,84.3,0,36,0,0,0
