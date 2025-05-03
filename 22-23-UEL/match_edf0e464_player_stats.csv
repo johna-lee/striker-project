@@ -1,0 +1,33 @@
+match_id,team,Player,#,Nation,Pos,Age,Min,Gls,Ast,PK,PKatt,Sh,SoT,CrdY,CrdR,Touches,Tkl,Int,Blocks,xG,npxG,xAG,SCA,GCA,Cmp,Att,Cmp%,PrgP,Carries,PrgC,Att,Succ
+edf0e464,Manchester Utd,Cristiano Ronaldo,7,POR,FW,37-215,90,0,0,0,0,4,0,0,0,35,0,0,0,0.3,0.3,0.0,1,0,19,23,82.6,3,27,1,4,1
+edf0e464,Manchester Utd,Anthony Elanga,36,SWE,LW,20-134,70,0,0,0,0,2,0,0,0,32,3,1,0,0.1,0.1,0.1,5,0,17,22,77.3,0,28,3,4,4
+edf0e464,Manchester Utd,Alejandro Garnacho,49,ARG,LW,18-069,20,0,0,0,0,1,0,0,0,10,1,0,0,0.0,0.0,0.0,1,0,6,6,100.0,0,7,1,2,0
+edf0e464,Manchester Utd,Antony,21,BRA,RW,22-196,70,0,0,0,0,1,1,0,0,37,1,0,2,0.0,0.0,0.0,2,0,19,25,76.0,4,28,1,6,2
+edf0e464,Manchester Utd,Jadon Sancho,25,ENG,RW,22-167,20,0,0,0,0,0,0,0,0,12,0,0,0,0.0,0.0,0.0,0,0,8,9,88.9,0,9,0,1,1
+edf0e464,Manchester Utd,Fred,17,BRA,"DM,AM",29-187,90,0,0,0,0,2,0,1,0,63,3,2,2,0.1,0.1,0.1,2,0,37,47,78.7,6,38,0,2,1
+edf0e464,Manchester Utd,Christian Eriksen,14,DEN,DM,30-206,45,0,0,0,0,0,0,0,0,30,0,0,0,0.0,0.0,0.1,3,0,23,29,79.3,5,21,0,0,0
+edf0e464,Manchester Utd,Bruno Fernandes,8,POR,AM,28-000,45,0,0,0,0,0,0,0,0,28,0,0,0,0.0,0.0,0.3,3,0,18,24,75.0,2,15,0,0,0
+edf0e464,Manchester Utd,Casemiro,18,BRA,DM,30-197,90,0,0,0,0,3,2,0,0,72,2,0,5,0.1,0.1,0.1,4,0,45,58,77.6,5,46,0,0,0
+edf0e464,Manchester Utd,Tyrell Malacia,12,NED,LB,23-022,82,0,0,0,0,2,0,0,0,77,3,1,2,0.1,0.1,0.0,3,0,63,69,91.3,4,49,4,3,3
+edf0e464,Manchester Utd,Charlie McNeill,56,ENG,LB,18-364,8,0,0,0,0,0,0,0,0,1,0,0,0,0.0,0.0,0.0,0,0,0,0,,0,0,0,0,0
+edf0e464,Manchester Utd,Victor Lindelöf,2,SWE,"RB,CB",28-053,90,0,0,0,0,0,0,0,0,66,1,0,0,0.0,0.0,0.0,0,0,56,63,88.9,5,40,1,0,0
+edf0e464,Manchester Utd,Harry Maguire,5,ENG,CB,29-187,90,0,0,0,0,0,0,0,0,66,1,1,1,0.0,0.0,0.0,2,0,49,60,81.7,2,40,0,0,0
+edf0e464,Manchester Utd,Diogo Dalot,20,POR,RB,23-174,45,0,0,0,0,0,0,0,0,43,0,1,0,0.0,0.0,0.0,1,0,35,41,85.4,3,31,0,1,0
+edf0e464,Manchester Utd,Lisandro Martínez,6,ARG,CB,24-233,45,0,0,0,0,0,0,1,0,49,3,2,0,0.0,0.0,0.0,3,0,34,43,79.1,3,30,1,1,1
+edf0e464,Manchester Utd,David de Gea,1,ESP,GK,31-305,90,0,0,0,0,0,0,1,0,30,0,0,0,0.0,0.0,0.0,0,0,20,28,71.4,0,20,0,0,0
+edf0e464,Real Sociedad,Umar Sadiq,25,NGA,FW,25-218,45,0,0,0,0,1,0,0,0,12,0,0,0,0.1,0.1,0.0,1,0,6,8,75.0,0,8,1,1,1
+edf0e464,Real Sociedad,Alexander Sørloth,19,NOR,"CM,FW",26-277,45,0,0,0,0,1,0,0,0,18,0,0,0,0.1,0.1,0.0,0,0,10,17,58.8,0,16,2,1,1
+edf0e464,Real Sociedad,Takefusa Kubo,14,JPN,LM,21-096,77,0,0,0,0,1,1,0,0,32,0,0,1,0.0,0.0,0.2,2,0,16,23,69.6,2,25,3,2,1
+edf0e464,Real Sociedad,Ander Barrenetxea,7,ESP,LM,20-255,13,0,0,0,0,0,0,0,0,7,0,0,1,0.0,0.0,0.0,0,0,4,6,66.7,1,5,1,1,1
+edf0e464,Real Sociedad,David Silva,21,ESP,CM,36-243,64,0,0,0,0,1,0,1,0,45,0,2,1,0.1,0.1,0.0,4,1,28,38,73.7,4,31,1,1,1
+edf0e464,Real Sociedad,Mohamed Ali Cho,11,FRA,"RM,CM",18-232,26,0,0,0,0,1,1,0,0,14,0,0,0,0.0,0.0,0.0,1,0,5,7,71.4,0,10,1,4,1
+edf0e464,Real Sociedad,Mikel Merino,8,ESP,CM,26-078,90,0,0,0,0,1,0,0,0,48,1,6,2,0.0,0.0,0.0,1,0,26,37,70.3,3,28,0,0,0
+edf0e464,Real Sociedad,Brais Méndez,23,ESP,"RM,CM",25-244,83,1,0,1,1,0,0,0,0,34,0,2,1,0.8,0.0,0.0,2,0,19,26,73.1,1,18,0,1,0
+edf0e464,Real Sociedad,Beñat Turrientes,22,ESP,CM,20-220,7,0,0,0,0,0,0,1,0,3,1,0,0,0.0,0.0,0.0,0,0,1,2,50.0,1,3,1,1,0
+edf0e464,Real Sociedad,Martín Zubimendi,3,ESP,DM,23-218,90,0,0,0,0,0,0,0,0,54,1,5,2,0.0,0.0,0.0,0,0,42,45,93.3,4,27,0,0,0
+edf0e464,Real Sociedad,Aihen Muñoz,12,ESP,LB,25-023,90,0,0,0,0,0,0,1,0,52,5,0,1,0.0,0.0,0.0,0,0,29,39,74.4,0,27,6,3,2
+edf0e464,Real Sociedad,Jon Pacheco,20,ESP,CB,21-243,90,0,0,0,0,0,0,0,0,59,0,3,2,0.0,0.0,0.0,0,0,40,50,80.0,0,37,0,0,0
+edf0e464,Real Sociedad,Aritz Elustondo,6,ESP,CB,28-164,90,0,0,0,0,0,0,0,0,51,1,1,2,0.0,0.0,0.0,0,0,39,47,83.0,2,32,0,0,0
+edf0e464,Real Sociedad,Andoni Gorosabel,18,ESP,RB,26-035,83,0,0,0,0,0,0,0,0,41,1,0,1,0.0,0.0,0.0,0,0,30,36,83.3,0,23,0,1,1
+edf0e464,Real Sociedad,Alex Sola,2,ESP,RB,23-091,7,0,0,0,0,0,0,0,0,6,1,1,0,0.0,0.0,0.0,0,0,2,5,40.0,0,2,0,0,0
+edf0e464,Real Sociedad,Álex Remiro,1,ESP,GK,27-168,90,0,0,0,0,0,0,0,0,57,0,0,0,0.0,0.0,0.0,0,0,42,55,76.4,0,37,0,0,0
