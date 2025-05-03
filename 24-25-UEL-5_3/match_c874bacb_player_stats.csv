@@ -1,0 +1,30 @@
+match_id,team,Player,#,Nation,Pos,Age,Min,Gls,Ast,PK,PKatt,Sh,SoT,CrdY,CrdR,Touches,Tkl,Int,Blocks,xG,npxG,xAG,SCA,GCA,Cmp,Att,Cmp%,PrgP,Carries,PrgC,Att,Succ
+c874bacb,Manchester Utd,Rasmus Højlund,9,DEN,FW,22-037,90,0,1,0,0,3,0,0,0,25,0,0,1,1.0,1.0,0.6,5,2,16,19,84.2,1,12,2,0,0
+c874bacb,Manchester Utd,Joshua Zirkzee,11,NED,AM,23-295,88,0,0,0,0,4,2,0,0,36,0,0,1,0.3,0.3,0.8,6,1,20,24,83.3,3,22,1,5,4
+c874bacb,Manchester Utd,Christian Eriksen,14,DEN,AM,33-027,2,0,0,0,0,1,1,0,0,5,0,0,1,0.1,0.1,0.0,0,0,2,3,66.7,0,2,1,0,0
+c874bacb,Manchester Utd,Alejandro Garnacho,17,ARG,AM,20-255,90,0,1,0,0,3,1,0,0,46,1,2,1,0.2,0.2,0.4,6,1,26,33,78.8,2,34,8,3,0
+c874bacb,Manchester Utd,Bruno Fernandes,8,POR,CM,30-186,90,3,0,2,2,4,2,0,0,81,3,1,2,1.9,0.3,0.2,9,0,49,70,70.0,7,40,3,3,1
+c874bacb,Manchester Utd,Casemiro,18,BRA,CM,33-018,78,0,0,0,0,1,0,0,0,71,3,1,2,0.0,0.0,0.0,3,1,50,61,82.0,11,33,2,0,0
+c874bacb,Manchester Utd,Toby Collyer,43,ENG,CM,21-069,12,0,0,0,0,0,0,1,0,10,1,0,1,0.0,0.0,0.0,0,0,6,6,100.0,1,1,0,0,0
+c874bacb,Manchester Utd,Patrick Dorgu,13,DEN,WB,20-138,90,0,0,0,0,5,1,0,0,60,3,1,2,0.3,0.3,0.0,6,2,29,41,70.7,1,29,4,2,0
+c874bacb,Manchester Utd,Diogo Dalot,20,POR,WB,25-360,90,1,0,0,0,1,1,0,0,64,3,1,0,0.4,0.4,0.1,5,1,48,59,81.4,9,28,2,0,0
+c874bacb,Manchester Utd,Ayden Heaven,26,ENG,CB,18-172,90,0,0,0,0,0,0,0,0,62,3,2,0,0.0,0.0,0.0,1,0,42,49,85.7,1,39,0,0,0
+c874bacb,Manchester Utd,Matthijs de Ligt,4,NED,CB,25-213,90,0,0,0,0,1,0,1,0,56,0,0,1,0.0,0.0,0.0,0,0,40,47,85.1,2,27,0,0,0
+c874bacb,Manchester Utd,Noussair Mazraoui,3,MAR,CB,27-119,90,0,0,0,0,0,0,0,0,69,1,1,1,0.0,0.0,0.1,2,0,58,60,96.7,3,45,4,2,1
+c874bacb,Manchester Utd,André Onana,24,CMR,GK,28-345,90,0,0,0,0,0,0,0,0,40,0,0,0,0.0,0.0,0.0,0,0,28,39,71.8,0,29,0,0,0
+c874bacb,Real Sociedad,Mikel Oyarzabal,10,ESP,FW,27-326,90,1,0,1,1,1,0,1,0,33,0,1,0,0.8,0.0,0.1,5,1,21,27,77.8,2,17,2,1,0
+c874bacb,Real Sociedad,Sheraldo Becker,11,SUR,LW,30-032,54,0,0,0,0,1,1,0,0,11,0,0,0,0.0,0.0,0.0,0,0,6,8,75.0,0,6,2,0,0
+c874bacb,Real Sociedad,Ander Barrenetxea,7,ESP,LW,23-076,36,0,0,0,0,1,0,1,0,16,0,0,0,0.0,0.0,0.0,0,0,7,10,70.0,1,11,1,1,0
+c874bacb,Real Sociedad,Takefusa Kubo,14,JPN,RW,23-282,75,0,0,0,0,2,1,0,0,31,1,1,0,0.1,0.1,0.0,0,0,11,15,73.3,1,19,2,5,1
+c874bacb,Real Sociedad,Orri Steinn Óskarsson,9,ISL,RW,20-196,15,0,0,0,0,0,0,0,0,9,1,0,0,0.0,0.0,0.0,1,0,4,5,80.0,0,6,0,1,0
+c874bacb,Real Sociedad,Pablo Marín,28,ESP,LM,21-253,55,0,0,0,0,1,0,1,0,18,0,0,1,0.1,0.1,0.0,1,0,12,14,85.7,2,9,1,1,0
+c874bacb,Real Sociedad,Beñat Turrientes,22,ESP,LM,23-041,35,0,0,0,0,0,0,0,0,22,1,0,1,0.0,0.0,0.0,0,0,11,15,73.3,1,11,0,1,0
+c874bacb,Real Sociedad,Martín Zubimendi,4,ESP,"CM,CB",26-039,90,0,0,0,0,0,0,1,0,52,0,2,4,0.0,0.0,0.0,1,0,31,39,79.5,4,25,0,1,1
+c874bacb,Real Sociedad,Brais Méndez,23,ESP,RM,28-065,90,0,0,0,0,0,0,0,0,57,3,2,0,0.0,0.0,0.1,4,0,38,47,80.9,4,28,1,1,0
+c874bacb,Real Sociedad,Aihen Muñoz,3,ESP,LB,27-209,90,0,0,0,0,0,0,0,0,43,4,1,1,0.0,0.0,0.0,0,0,24,32,75.0,0,20,1,1,0
+c874bacb,Real Sociedad,Nayef Aguerd,21,MAR,CB,28-348,90,0,0,0,0,0,0,1,0,34,1,1,0,0.0,0.0,0.0,0,0,21,25,84.0,1,18,0,0,0
+c874bacb,Real Sociedad,Igor Zubeldia,5,ESP,CB,27-348,55,0,0,0,0,0,0,1,0,25,0,0,0,0.0,0.0,0.0,0,0,16,22,72.7,1,16,0,0,0
+c874bacb,Real Sociedad,Jon Aramburu,19,VEN,RB,22-233,7,0,0,0,0,0,0,0,1,10,0,0,0,0.0,0.0,0.0,0,0,9,10,90.0,0,5,2,0,0
+c874bacb,Real Sociedad,Aritz Elustondo,6,ESP,"RB,CB",30-350,77,0,0,0,0,0,0,1,0,51,1,1,2,0.0,0.0,0.0,2,1,29,39,74.4,2,30,0,1,0
+c874bacb,Real Sociedad,Hamari Traoré,18,MLI,RB,33-045,13,0,0,0,0,1,0,0,0,15,0,1,1,0.0,0.0,0.0,0,0,7,10,70.0,1,3,0,0,0
+c874bacb,Real Sociedad,Álex Remiro,1,ESP,GK,29-354,90,0,0,0,0,0,0,0,0,40,0,0,0,0.0,0.0,0.0,0,0,15,35,42.9,0,17,0,0,0

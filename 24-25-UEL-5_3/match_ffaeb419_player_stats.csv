@@ -1,0 +1,32 @@
+match_id,team,Player,#,Nation,Pos,Age,Min,Gls,Ast,PK,PKatt,Sh,SoT,CrdY,CrdR,Touches,Tkl,Int,Blocks,xG,npxG,xAG,SCA,GCA,Cmp,Att,Cmp%,PrgP,Carries,PrgC,Att,Succ
+ffaeb419,Fenerbahçe,Youssef En-Nesyri,19,MAR,FW,27-145,78,1,0,0,0,6,3,0,0,22,0,0,1,1.0,1.0,0.0,1,0,8,12,66.7,0,14,1,0,0
+ffaeb419,Fenerbahçe,Edin Džeko,9,BIH,FW,38-221,12,0,0,0,0,0,0,0,0,3,0,0,0,0.0,0.0,0.0,0,0,0,1,0.0,0,1,0,0,0
+ffaeb419,Fenerbahçe,Allan Saint-Maximin,97,FRA,LW,27-226,78,0,1,0,0,0,0,0,0,36,0,0,1,0.0,0.0,0.4,2,1,15,24,62.5,4,23,6,8,3
+ffaeb419,Fenerbahçe,İrfan Kahveci,17,TUR,"RW,FW",29-101,12,0,0,0,0,0,0,0,0,11,0,0,0,0.0,0.0,0.0,0,0,6,9,66.7,1,7,1,1,0
+ffaeb419,Fenerbahçe,Dušan Tadić,10,SRB,RW,35-339,78,0,0,0,0,2,1,0,0,43,2,0,1,0.2,0.2,0.5,4,0,27,35,77.1,3,18,0,2,2
+ffaeb419,Fenerbahçe,İsmail Yüksek,5,TUR,LM,25-272,12,0,0,0,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0,0,1,2,50.0,1,0,0,0,0
+ffaeb419,Fenerbahçe,Sebastian Szymański,53,POL,"LM,AM,LW",25-167,89,0,0,0,0,0,0,0,0,52,1,1,1,0.0,0.0,0.0,3,1,33,46,71.7,8,33,2,0,0
+ffaeb419,Fenerbahçe,Mert Yandaş,8,TUR,LW,30-066,1,0,0,0,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0,0,2,2,100.0,0,0,0,0,0
+ffaeb419,Fenerbahçe,Sofyan Amrabat,34,MAR,"CM,DM",28-064,90,0,0,0,0,0,0,0,0,67,1,1,2,0.0,0.0,0.0,0,0,52,63,82.5,4,43,0,0,0
+ffaeb419,Fenerbahçe,Fred,13,BRA,"RM,DM",31-233,90,0,0,0,0,1,0,0,0,74,2,0,1,0.0,0.0,0.0,2,0,54,61,88.5,10,46,1,2,0
+ffaeb419,Fenerbahçe,Mert Müldür,16,TUR,LB,25-204,90,0,0,0,0,0,0,1,0,83,2,2,1,0.0,0.0,0.0,0,0,72,78,92.3,7,52,1,0,0
+ffaeb419,Fenerbahçe,Alexander Djiku,6,GHA,"CB,RB",30-076,90,0,0,0,0,0,0,0,0,91,7,5,1,0.0,0.0,0.0,1,0,68,74,91.9,3,53,1,1,0
+ffaeb419,Fenerbahçe,Çağlar Söyüncü,4,TUR,CB,28-154,90,0,0,0,0,0,0,0,0,68,0,2,0,0.0,0.0,0.0,1,0,55,62,88.7,4,46,1,0,0
+ffaeb419,Fenerbahçe,Bright Osayi-Samuel,21,NGA,RB,26-298,61,0,0,0,0,1,0,1,0,25,0,1,0,0.0,0.0,0.0,3,0,15,19,78.9,1,17,4,2,1
+ffaeb419,Fenerbahçe,Rodrigo Becão,50,BRA,CB,28-279,29,0,0,0,0,0,0,0,0,11,1,0,0,0.0,0.0,0.0,0,0,8,8,100.0,0,6,0,0,0
+ffaeb419,Fenerbahçe,Dominik Livaković,40,CRO,GK,29-289,90,0,0,0,0,0,0,0,0,31,0,0,0,0.0,0.0,0.0,0,0,21,28,75.0,0,18,0,0,0
+ffaeb419,Manchester Utd,Joshua Zirkzee,11,NED,FW,23-155,54,0,1,0,0,0,0,0,0,20,0,0,1,0.0,0.0,0.2,1,1,8,12,66.7,4,12,2,1,0
+ffaeb419,Manchester Utd,Rasmus Højlund,9,DEN,FW,21-263,36,0,0,0,0,1,1,0,0,7,1,0,1,0.1,0.1,0.0,2,0,4,4,100.0,0,5,1,1,1
+ffaeb419,Manchester Utd,Alejandro Garnacho,17,ARG,LW,20-115,90,0,0,0,0,2,1,0,0,38,1,0,2,0.0,0.0,0.0,1,0,19,26,73.1,2,29,4,4,2
+ffaeb419,Manchester Utd,Marcus Rashford,10,ENG,RW,26-359,72,0,0,0,0,2,0,1,0,35,0,0,0,0.5,0.5,0.0,0,0,20,27,74.1,2,23,2,3,2
+ffaeb419,Manchester Utd,Antony,21,BRA,RW,24-243,16,0,0,0,0,0,0,0,0,8,0,0,1,0.0,0.0,0.0,1,0,4,6,66.7,0,5,1,1,0
+ffaeb419,Manchester Utd,Amad Diallo,16,CIV,RW,22-105,2,0,0,0,0,0,0,0,0,3,0,0,0,0.0,0.0,0.0,0,0,2,2,100.0,0,3,0,1,0
+ffaeb419,Manchester Utd,Noussair Mazraoui,3,MAR,"AM,LB",26-345,90,0,0,0,0,1,1,0,0,61,4,1,1,0.0,0.0,0.0,3,1,42,50,84.0,7,36,2,1,0
+ffaeb419,Manchester Utd,Manuel Ugarte Ribeiro,25,URU,DM,23-196,90,0,0,0,0,1,0,0,0,55,2,3,1,0.0,0.0,0.0,2,0,37,42,88.1,0,36,0,1,1
+ffaeb419,Manchester Utd,Christian Eriksen,14,DEN,"DM,AM",32-253,90,1,0,0,0,2,1,0,0,66,1,0,3,0.2,0.2,0.4,5,0,43,55,78.2,5,30,0,0,0
+ffaeb419,Manchester Utd,Lisandro Martínez,6,ARG,"LB,CB",26-280,90,0,0,0,0,1,0,0,0,80,3,1,0,0.1,0.1,0.0,0,0,63,68,92.6,3,50,1,1,0
+ffaeb419,Manchester Utd,Victor Lindelöf,2,SWE,CB,30-099,54,0,0,0,0,0,0,0,0,38,0,0,1,0.0,0.0,0.0,0,0,31,34,91.2,0,23,0,0,0
+ffaeb419,Manchester Utd,Casemiro,18,BRA,DM,32-244,36,0,0,0,0,1,0,0,0,29,2,0,0,0.1,0.1,0.0,4,0,20,24,83.3,5,18,0,1,1
+ffaeb419,Manchester Utd,Matthijs de Ligt,4,NED,CB,25-073,90,0,0,0,0,1,1,0,0,63,1,0,1,0.1,0.1,0.0,1,0,51,56,91.1,3,49,1,0,0
+ffaeb419,Manchester Utd,Diogo Dalot,20,POR,RB,25-220,90,0,0,0,0,0,0,0,0,45,3,0,0,0.0,0.0,0.4,1,0,32,37,86.5,4,31,3,4,3
+ffaeb419,Manchester Utd,André Onana,24,CMR,GK,28-205,90,0,0,0,0,0,0,0,0,48,0,0,0,0.0,0.0,0.0,0,0,30,44,68.2,0,36,0,0,0
