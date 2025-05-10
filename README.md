@@ -1,13 +1,12 @@
-This is a living document and will be treated like a blog to document my progress through this project until I clean up Github for presentation and create a website to publish my findings.
+Data Engineering Project: An End-to-End ELT Pipeline for Soccer Analysis
 
-striker-project is a personal project I am working on to learn the basics of data engineering. My main goals are to learn DE fundamentals, GCP, Github, and brush up on my Python and SQL skills.
+Hello and welcome to my first data engineering project! This project is done from a hyptothetical perspective, where I am a consultant for my favorite soccer club Arsenal. Arsenal are in desperate need of a goalscorer to help them win titles, but they have budgetary constraints. My job is to identify the ideal value candidate; a player who is young, highly efficient, up-and-coming, and does not command a big wage or transfer fee from the selling club.
 
-Why I chose a soccer project
-I love my soccer team, Arsenal, but they have one glaring weakness: they lack a goalscorer. Arsenal is the epitome of a team, they spread the goals around among a lot players. But they need someone who can consistently be relied on, whose specialty is scoring goals.
+To do this, I built the pipeline below which handles batch match data and leverages various services in Google Cloud Platform (GCP).
 
-The data I've chosen to use
-Soccer is by far the most popular sport on planet Earth, and this presents interesting opportunities from a data analytics standpoint. There is a ton of data out there, which can be both a blessing and a curse. You see, nearly every country on the planet has multiple divisions of professional soccer, which vary drastically in terms of quality, style, pace of play, etc. For example, someone scoring loads of goals in Ligue 1 in France may not do the same in the English Premier League (the league Arsenal plays in) because the English Premier League is much more physical with a quicker pace of play.
+- Python+Pandas is used to scrape data from the web, save as CSV, and upload to Google Cloud Storage (GCS)
+- GCS stores a copy of the raw data before processing to maintain data integrity
+- Dataflow is responsible for processing the hundreds of CSV files and loading the data in to BigQuery
+- BigQuery serves as the data warehouse where transformations are made and the dataset is exported to PowerBI
+- PowerBI allows for data analysis and data visualizations to present our findings
 
-There is however a great equalizer, tournaments where teams from different leagues in Europe play each other. The premier competetion with the best teams is called the UEFA Champions League (UCL) and the second-tier competition is called the UEFA Europa League (UEL). I have scraped the past 3 seasons of both competitions to form my data set, inclusive of the current season still progressing. I have included the UEL for 2 reasons: 1. to form a larger dataset 2. sometimes good teams with good players wind up in the Europa League due to league position or dropping down from the Champions League (this is no longer the format, but prior to the 24-25 season, the top teams knocked out of the Champions League tournament were entered into the Europa League tournament).
-
-How I've scraped the data
