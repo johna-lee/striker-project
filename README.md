@@ -23,8 +23,15 @@ The second script (fbref_scraper.py) was used to iterate through the match repor
 [comment]: <> (Insert python+pandas GCS upload screenshot)
 
 GCS
-After each competition's data was scraped and uploaded to the GCS bucket, the CSVs were moved to a named folder by yearly competition, which are the folders labeled "22-23 UCL match data", "22-23 UEL match data", etc. This serves as a record of the original files as well as allowing a single path for Dataflow to target when loading into BigQuery.
+After each competition's data was scraped and uploaded to the GCS bucket, I moved the CSV files to a named folder by yearly competition, which are the folders labeled "22-23 UCL match data", "22-23 UEL match data", etc. This serves as a record of the original files as well as allowing a single path for Dataflow to target when loading into BigQuery.
 
 [comment]: <> (Insert GCS buckets screenshot)
 
 Dataflow
+With the data in Google Cloud Platform (GCP), the next step was to load the roughly 900 CSV files into a BigQuery data warehouse using Dataflow. However, two things needed to be done before that could happen. First, I created a schema file (bigquery_schema.json) which defines the column names and data types of the output table.
+
+Second, a total of seven output tables were created in Bigquery, one for each of the six competitions' successfully loaded data and one for errors or data that was not loaded. These tables can be seen in the diagram below, with the errors table on the bottom left titled "Insert bad data into Bigquery" and the competition table on the bottom right titled "Insert good data into Bigquery". No errors occurred during the Dataflow jobs.
+
+[comment]: <> (Insert Dataflow diagram screenshot)
+
+BigQuery
