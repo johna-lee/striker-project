@@ -28,10 +28,12 @@ After each competition's data was scraped and uploaded to the GCS bucket, I move
 [comment]: <> (Insert GCS buckets screenshot)
 
 Dataflow
-With the data in Google Cloud Platform (GCP), the next step was to load the roughly 900 CSV files into a BigQuery data warehouse using Dataflow. However, two things needed to be done before that could happen. First, I created a schema file (bigquery_schema.json) which defines the column names and data types of the output table.
+With the data in Google Cloud Platform (GCP), the next step was to load the roughly 900 CSV files into a BigQuery data warehouse using Dataflow. However, two things needed to be done before that could happen. First, I created a schema file (bigquery_schema.json) which defines the column names and data types of the output tables.
 
-Second, a total of seven output tables were created in Bigquery, one for each of the six competitions' successfully loaded data and one for errors or data that was not loaded. These tables can be seen in the diagram below, with the errors table on the bottom left titled "Insert bad data into Bigquery" and the competition table on the bottom right titled "Insert good data into Bigquery". No errors occurred during the Dataflow jobs.
+Second, a total of seven output tables were created in Bigquery, one for each of the six competitions' successfully loaded data and one for errors or data that was not loaded. These tables can be seen in the diagram below, with the errors table on the bottom left titled "Insert bad records into Bigquery" and the competition table on the bottom right titled "Insert good records into Bigquery". No errors occurred during the Dataflow jobs.
 
 [comment]: <> (Insert Dataflow diagram screenshot)
+
+A Dataflow job was created for the initial competition and cloned for the remaining ones thereafter. By targeting the competition folder in the GCS bucket, Dataflow read each file and loaded the data into the respective BigQuery tables. No errors occurred during the Dataflow jobs.
 
 BigQuery
