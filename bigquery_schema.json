@@ -30,107 +30,107 @@
       },
       {
         "name": "minute",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "goal",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "assist",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "penalty_kick",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "penalty_kick_attempt",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "shot",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "shot_on_target",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "card_yellow",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "card_red",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "touch",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "tackle",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "interception",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "block",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "expected_goal",
-        "type": "FLOAT"
+        "type": "FLOAT64"
       },
       {
         "name": "non_penalty_expected_goal",
-        "type": "FLOAT"
+        "type": "FLOAT64"
       },
       {
         "name": "expected_assisted_goal",
-        "type": "FLOAT"
+        "type": "FLOAT64"
       },
       {
         "name": "shot_creating_action",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "goal_creating_action",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "pass_completed",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "pass_attempted",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "pass_completion_pct",
-        "type": "FLOAT"
+        "type": "FLOAT64"
       },
       {
         "name": "progressive_pass",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "carry",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "progressive_carry",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "dribble_attempted",
-        "type": "INTEGER"
+        "type": "INT64"
       },
       {
         "name": "dribble_success",
-        "type": "INTEGER"
+        "type": "INT64"
       }
     ]
   }
