@@ -45,4 +45,11 @@ The last action performed in BigQuery was to merge all six tables together into 
 
 [comment]: <> (Insert Bigquery merge screenshot)
 
-Power BI
+Power BI Desktop
+With the dataset now complete, the merged "match_data" table was imported into Power BI Desktop (as shown below) and matrix table visualization selected.
+
+[comment]: <> (Insert PowerBI load table screenshot)
+
+The following bullet points highlight each stage of analysis and the thought process behind it.
+
+    - 
