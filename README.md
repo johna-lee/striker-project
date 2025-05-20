@@ -30,10 +30,19 @@ After each competition's data was scraped and uploaded to the GCS bucket, I move
 Dataflow
 With the data in Google Cloud Platform (GCP), the next step was to load the roughly 900 CSV files into a BigQuery data warehouse using Dataflow. However, two things needed to be done before that could happen. First, I created a schema file (bigquery_schema.json) which defines the column names and data types of the output tables.
 
-Second, a total of seven output tables were created in Bigquery, one for each of the six competitions' successfully loaded data and one for errors or data that was not loaded. These tables can be seen in the diagram below, with the errors table on the bottom left titled "Insert bad records into Bigquery" and the competition table on the bottom right titled "Insert good records into Bigquery". No errors occurred during the Dataflow jobs.
+Second, a total of seven output tables were created in Bigquery, one for each of the six competitions' successfully loaded data and one for errors or data that was not loaded. These tables can be seen in the diagram below, with the errors table on the bottom left titled "Insert bad records into Bigquery" and the competition table on the bottom right titled "Insert good records into Bigquery".
 
 [comment]: <> (Insert Dataflow diagram screenshot)
 
 A Dataflow job was created for the initial competition and cloned for the remaining ones thereafter. By targeting the competition folder in the GCS bucket, Dataflow read each file and loaded the data into the respective BigQuery tables. No errors occurred during the Dataflow jobs.
 
 BigQuery
+After the data was loaded into BigQuery tables, simple transformations were peformed. The first was creating two new columns, one titled "competition" and another "season", as these are not found in the scraped data. The screenshot below shows the SQL query used, which created the columns and set the values for each record. This query was cloned and adjusted for each respective table.
+
+[comment]: <> (Insert Bigquery transformations screenshot)
+
+The last action performed in BigQuery was to merge all six tables together into a single table. The screenshot below shows the SQL query used which unions all data from each table. The query results were saved as a new table "match_data" using the console interface.
+
+[comment]: <> (Insert Bigquery merge screenshot)
+
+Power BI
