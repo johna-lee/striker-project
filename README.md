@@ -1,6 +1,6 @@
 Data Engineering Project: An End-to-End ELT Pipeline for Soccer Analysis
 
-Hello and welcome to my first data engineering project! This project is done from a hyptothetical perspective where I am a consultant for my favorite soccer club, Arsenal. Arsenal are in desperate need of a goalscorer to help them win titles, but they have budgetary constraints. My job is to identify the ideal value candidate; a player who is young, highly efficient, and up-and-coming, who does not command a big transfer fee from the selling club.
+Hello and welcome to my first data engineering project! This project is done from a hyptothetical perspective where I am a consultant for my favorite soccer club, Arsenal. Arsenal are in desperate need of a "striker", an attacking forward whose main job is to score goals, but they have budgetary constraints. My job is to identify the ideal value candidate; a player who is young, highly efficient, and up-and-coming, who does not command a big transfer fee from the selling club.
 
 To do this, I built the pipeline below which handles batch match data and leverages various services in Google Cloud Platform (GCP).
 
@@ -15,6 +15,7 @@ To do this, I built the pipeline below which handles batch match data and levera
 The Data
 The data I selected is from the past three seasons of two European soccer tournaments, UEFA Champions League (UCL) and UEFA Europa League (UEL), for a total of six initial tables comprising an aggregated dataset. The reason I chose these competitions is because although each country in European has a professional soccer league, the quality and competitiveness varies drastically. Someone who scores 30 goals in the Dutch Eredivise is doing so against inferior opposition compared to the English Premier League, so it is difficult to draw conclusions across leagues. However in the UCL and UEL the top teams from each country play each other, so performance should theoretically be a bit more predicitive. All match data was scraped from FBref.com, the most comprehensive free soccer database on the web.
 
+The Data Pipeline
 Python+Pandas
 To scrape the data, two separate scripts were needed. The first script (scrape_urls.py) was used to scrape the URLs for each match in each competition. As seen on the webpage for 2022-2023 UCL (https://fbref.com/en/comps/8/2022-2023/schedule/2022-2023-Champions-League-Scores-and-Fixtures), each match and result for the competition is listed in chronological order, with the stats found by clicking the "Match Report" link. This is the link the script targets for extracting the URL. The script works by looping through each row in the schedule table, finding the Match Report URL, saving it to an array, printing the array to a Pandas Dataframe, and saving the Dataframe as a CSV file. The resulting URLs of the six competitions can be found in the folder named "match report URLs", with the current year 2024-2025 competitions being as of May 3rd. I utilized Claude.ai to refine the script by adding a request delay and headers, as the script was initially rate limited and blocked.
 
@@ -46,10 +47,17 @@ The last action performed in BigQuery was to merge all six tables together into 
 [comment]: <> (Insert Bigquery merge screenshot)
 
 Power BI Desktop
-With the dataset now complete, the merged "match_data" table was imported into Power BI Desktop (as shown below) and matrix table visualization selected.
+With the dataset now complete, the final step of the data pipeline was to import the merged "match_data" table into Power BI Desktop for analysis, as shown below.
 
 [comment]: <> (Insert PowerBI load table screenshot)
 
-The following bullet points highlight each stage of analysis and the thought process behind it.
+The Analysis
+Although data has been extracted, loaded, transformed, and ready for analysis, my job of finding a striker is just beginning! The following bullet points highlight each stage of my analysis and the thought process behind it. Since I am used to pivot table formats, I chose a matrix table for my initial visualization.
 
-    - 
+    - Player and Sum of Goals - The first fields added to the matrix were "player" and the sum of "goals", sorted descending. After all, my job is to find a goalscorer, right? Yes, but there are obivous problems with such a basic approach. What if the top goalscorer played more games than everyone else? What if someone scored a lot of goals, but is a defender and not an attacker? I'll address questions like these and more throughout the analysis.
+
+    - Filtering on "W" - As mentioned above and at the beginning of this project, I am looking for an attacker. Luckily, attackers in the forward line all contain a "W" in the position description; forwards are "FW", while left and right wingers are "LW" and "RW" respectively. To ensure all relevant data is captured, an advanced filter containing "W" is applied to position as shown below.
+
+[comment]: <> (Insert PowerBI contains W screenshot)
+
+    - Count of Match_ID vs. Sum of Minutes - 
