@@ -138,7 +138,7 @@ def process_and_combine_tables(tables, match_id):
         # Add team name column
         df.insert(1, 'team', table_data['team_name'])
         
-        # Remove country flag from Nation column
+        # Remove country flags from Nation column
         if 'Nation' in df.columns:
             df['Nation'] = df['Nation'].apply(lambda x: x.split(' ', 1)[1] if ' ' in x else x)
         
