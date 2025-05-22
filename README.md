@@ -60,6 +60,10 @@ Although data has been extracted, loaded, transformed, and ready for analysis, m
 
 [comment]: <> (Insert PowerBI contains W screenshot)
 
+    - Filtering on Age - Age is one of the main criteria I have been tasked with in my search for the ideal player. While age is highly subjective with people peaking at different times, the general consensus is that attackers reach their prime in their mid-to-late 20s. As such, I set the Age summarization to Maximum and filtered for players less than 27 years old.
+
+[comment]: <> (Insert ages less than 27 screenshot)
+
     - Goals per 90 - Goals per 90 is a metric used to determine the average number of goals per 90 minutes, or the length of a full soccer match. The reason it is important is because players can be substituted, and using just the number of games played does not capture the full picture. For example, if a player comes into two consecutive games at the 85th minute and scores a goal in each, it is not entirely inaccurate to say they averaged one goal per game. However, they scored two goals having only been on the field a total 10 minutes across both games. This is much more impressive than someone who scored two goals playing two full games, or roughly 180 minutes.
 
     To add a Goals per 90 column, a new measure was created with the following calculation:
