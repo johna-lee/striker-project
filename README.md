@@ -60,4 +60,18 @@ Although data has been extracted, loaded, transformed, and ready for analysis, m
 
 [comment]: <> (Insert PowerBI contains W screenshot)
 
-    - Count of Match_ID vs. Sum of Minutes - 
+    - Goals per 90 - Goals per 90 is a metric used to determine the average number of goals per 90 minutes, or the length of a full soccer match. The reason it is important is because players can be substituted, and using just the number of games played does not capture the full picture. For example, if a player comes into two consecutive games at the 85th minute and scores a goal in each, it is not entirely inaccurate to say they averaged one goal per game. However, they scored two goals having only been on the field a total 10 minutes across both games. This is much more impressive than someone who scored two goals playing two full games, or roughly 180 minutes.
+
+    To add a Goals per 90 column, a new measure was created with the following calculation:
+    goals_per_90 = ((SUM(match_data[goal]) / SUM(match_data[minute])) * 90)
+
+[comment]: <> (Insert goals per 90 screenshot)
+
+    - Goals to Expected Goals ratio - Expected Goals (xG) is a metric that measures the quality of a goal-scoring opportunity by calculating the likelihood that it will be scored by using information on similar shots in the past. In other words, a shot with an xG of 0.5 is expected to be scored half the time. Comparing the number of goals scored to the xG gives a measure of efficiency, with a ratio greater than 1 indicating a player is overpeforming, while a ratio less than 1 indicates a player is underpeforming.
+
+    To add a Goals to Expected Goals ratio column, a new measure was created with the following calculation:
+    goals_to_xg_ratio = SUM(match_data[goal]) / SUM(match_data[expected_goal])
+
+    *Note that the Goals to Expected Goals ratio is not adjusted to "per 90", since creating a "Goals per 90 to Expected Goals per 90" ratio yields the same result.
+
+[comment]: <> (Insert goals to xg ratio screenshot)
