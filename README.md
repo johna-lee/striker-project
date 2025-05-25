@@ -42,9 +42,13 @@ After the data was loaded into BigQuery tables, simple transformations were pefo
 
 [comment]: <> (Insert Bigquery transformations screenshot)
 
-The last action performed in BigQuery was to merge all six tables together into a single table. The screenshot below shows the SQL query used which unions all data from each table. The query results were saved as a new table "match_data" using the console interface.
+The next action performed in BigQuery was to merge all six tables together into a single table. The screenshot below shows the SQL query used which unions all data from each table. The query results were saved as a new table "match_data" using the console interface.
 
 [comment]: <> (Insert Bigquery merge screenshot)
+
+Lastly, the age column had to be transformed from a string year-days format to a year integer format. The below shows the SQL queries used, where a temporary column was created, nulls assigned 0, string split on "-" delimiter, age column deleted, and the new updated column renamed to age.
+
+[comment]: <> (Insert combined age query screenshots)
 
 Power BI Desktop
 With the dataset now complete, the final step of the data pipeline was to import the merged "match_data" table into Power BI Desktop for analysis, as shown below.
@@ -54,15 +58,17 @@ With the dataset now complete, the final step of the data pipeline was to import
 The Analysis
 Although data has been extracted, loaded, transformed, and ready for analysis, my job of finding a striker is just beginning! The following bullet points highlight each stage of my analysis and the thought process behind it. Since I am used to pivot table formats, I chose a matrix table for my initial visualization.
 
-    - Player and Sum of Goals - The first fields added to the matrix were "player" and the sum of "goals", sorted descending. After all, my job is to find a goalscorer, right? Yes, but there are obivous problems with such a basic approach. What if the top goalscorer played more games than everyone else? What if someone scored a lot of goals, but is a defender and not an attacker? I'll address questions like these and more throughout the analysis.
+    - Player and Age - The first fields added to the matrix were "player" and a filter on age.
+
+    - Filtering on Age - Age is one of the main criteria I have been tasked with in my search for the ideal player. While age is highly subjective with people peaking at different times, the general consensus is that attackers reach their prime in their mid-to-late 20s. As such, I set the Age summarization to Maximum and filtered for players less than 27 years old.
+
+[comment]: <> (Insert ages less than 27 screenshot)
 
     - Filtering on "W" - As mentioned above and at the beginning of this project, I am looking for an attacker. Luckily, attackers in the forward line all contain a "W" in the position description; forwards are "FW", while left and right wingers are "LW" and "RW" respectively. To ensure all relevant data is captured, an advanced filter containing "W" is applied to position as shown below.
 
 [comment]: <> (Insert PowerBI contains W screenshot)
 
-    - Filtering on Age - Age is one of the main criteria I have been tasked with in my search for the ideal player. While age is highly subjective with people peaking at different times, the general consensus is that attackers reach their prime in their mid-to-late 20s. As such, I set the Age summarization to Maximum and filtered for players less than 27 years old.
-
-[comment]: <> (Insert ages less than 27 screenshot)
+    **include blurb on why can't look at just goals below**
 
     - Goals per 90 - Goals per 90 is a metric used to determine the average number of goals per 90 minutes, or the length of a full soccer match. The reason it is important is because players can be substituted, and using just the number of games played does not capture the full picture. For example, if a player comes into two consecutive games at the 85th minute and scores a goal in each, it is not entirely inaccurate to say they averaged one goal per game. However, they scored two goals having only been on the field a total 10 minutes across both games. This is much more impressive than someone who scored two goals playing two full games, or roughly 180 minutes.
 
@@ -78,4 +84,11 @@ Although data has been extracted, loaded, transformed, and ready for analysis, m
 
     *Note that the Goals to Expected Goals ratio is not adjusted to "per 90", since creating a "Goals per 90 to Expected Goals per 90" ratio yields the same result.
 
-[comment]: <> (Insert goals to xg ratio screenshot)
+    - Shot Conversion Rate - Shot Conversion Rate is the percentage of shots that result in goals. This measures an attacker's clinical finishing ability and is another measure of efficiency in front of goal.
+
+    To add a Shot Conversion Ratio column, a new measure was created with the following calculation:
+    shot_conversion_rate = (SUM(match_data[goal]) / SUM(match_data[shot])) * 100
+
+
+    ***Possibly have separate sections for Analysis: Initial Exclusion Criteria, Rate-Volume Analysis, Efficiency Analysis,  
+
