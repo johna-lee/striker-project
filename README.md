@@ -46,7 +46,7 @@ The next action performed in BigQuery was to merge all six tables together into 
 
 [comment]: <> (Insert Bigquery merge screenshot)
 
-Lastly, the age column had to be transformed from a string year-days format to a year integer format. The below shows the SQL queries used, where a temporary column was created, nulls assigned 0, string split on "-" delimiter, age column deleted, and the new updated column renamed to age.
+Lastly, the age column had to be transformed from a string year-days format to an integer year format. The below shows the SQL queries used, where a temporary column was created, nulls assigned 0, string split on "-" delimiter, age column deleted, and the new updated column renamed to age.
 
 [comment]: <> (Insert combined age query screenshots)
 
@@ -56,7 +56,7 @@ With the dataset now complete, the final step of the data pipeline was to import
 [comment]: <> (Insert PowerBI load table screenshot)
 
 The Analysis
-Although data has been extracted, loaded, transformed, and ready for analysis, my job of finding a striker is just beginning! The following bullet points highlight each stage of my analysis and the thought process behind it. Since I am used to pivot table formats, I chose a matrix table for my initial visualization.
+Although data has been extracted, loaded, transformed, and ready for analysis, my job of finding an attacker is just beginning! The following bullet points highlight each stage of my analysis and the thought process behind it. Since I am familiar with pivot table formats, I chose a matrix table for my initial visualization.
 
     - Player and Age - The first fields added to the matrix were "player" and a filter on age.
 
@@ -64,18 +64,22 @@ Although data has been extracted, loaded, transformed, and ready for analysis, m
 
 [comment]: <> (Insert ages less than 27 screenshot)
 
-    - Filtering on "W" - As mentioned above and at the beginning of this project, I am looking for an attacker. Luckily, attackers in the forward line all contain a "W" in the position description; forwards are "FW", while left and right wingers are "LW" and "RW" respectively. To ensure all relevant data is captured, an advanced filter containing "W" is applied to position as shown below.
+    - Filtering on "W" - As mentioned, I am looking for an attacker. Luckily, attackers in the forward line all contain a "W" in the position description; forwards are "FW", while left and right wingers are "LW" and "RW" respectively. To ensure all relevant data is captured, an advanced filter containing "W" is applied to position as shown below.
 
 [comment]: <> (Insert PowerBI contains W screenshot)
 
-    **include blurb on why can't look at just goals below**
+    - Total Goals - I added a sum of goals and sorted descending to bring potential candidates into the visual field of the matrix table.
 
-    - Goals per 90 - Goals per 90 is a metric used to determine the average number of goals per 90 minutes, or the length of a full soccer match. The reason it is important is because players can be substituted, and using just the number of games played does not capture the full picture. For example, if a player comes into two consecutive games at the 85th minute and scores a goal in each, it is not entirely inaccurate to say they averaged one goal per game. However, they scored two goals having only been on the field a total 10 minutes across both games. This is much more impressive than someone who scored two goals playing two full games, or roughly 180 minutes.
+    - Goals per 90 - Goals per 90 is a metric used to determine the average number of goals per 90 minutes, or the length of a full soccer match. The reason it is important is because players can be substituted, and using just the number of games played is flawed. For example, if a player comes into two consecutive games at the 85th minute and scores a goal in each, it is technically not inaccurate to say they averaged one goal per game. However, scoring two goals having only been on the field a total 10 minutes across both games is much more impressive than someone who scored two goals playing two full games, or roughly 180 minutes.
 
     To add a Goals per 90 column, a new measure was created with the following calculation:
     goals_per_90 = ((SUM(match_data[goal]) / SUM(match_data[minute])) * 90)
 
-[comment]: <> (Insert goals per 90 screenshot)
+    While Goals per 90 is a powerful metric, it cannot be relied on exclusively. As shown below, outliers can skew the data when minutes played are not also taken into consideration.
+
+    - Goals per 90 by Minutes - 
+
+Efficiency Analysis
 
     - Goals to Expected Goals ratio - Expected Goals (xG) is a metric that measures the quality of a goal-scoring opportunity by calculating the likelihood that it will be scored by using information on similar shots in the past. In other words, a shot with an xG of 0.5 is expected to be scored half the time. Comparing the number of goals scored to the xG gives a measure of efficiency, with a ratio greater than 1 indicating a player is overpeforming, while a ratio less than 1 indicates a player is underpeforming.
 
@@ -89,6 +93,8 @@ Although data has been extracted, loaded, transformed, and ready for analysis, m
     To add a Shot Conversion Ratio column, a new measure was created with the following calculation:
     shot_conversion_rate = (SUM(match_data[goal]) / SUM(match_data[shot])) * 100
 
+Value Analysis
 
-    ***Possibly have separate sections for Analysis: Initial Exclusion Criteria, Rate-Volume Analysis, Efficiency Analysis,  
+Conclusion
+
 
