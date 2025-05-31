@@ -77,23 +77,25 @@ Although data has been extracted, loaded, transformed, and ready for analysis, m
 
     While Goals per 90 is a powerful metric, it cannot be relied on exclusively. As shown below, outliers can skew the data when minutes played are not also taken into consideration.
 
-    - Goals per 90 by Minutes - 
+    - Goals per 90 by Minutes - By plotting Goals per 90 by total Minutes, an interesting visual appears. For the overwhelming majority of players, the more total Minutes played, the lower their Goals per 90 trends. There are however a small number of players who do not follow this trend circled below, and these are the players I want to focus on. These players are maintaining a consistently high Goals per 90 despite an increasing number of total minutes. New filters of >=1000 Minutes and >=0.5 Goals per 90 were added to the dataset.
 
 Efficiency Analysis
 
-    - Goals to Expected Goals ratio - Expected Goals (xG) is a metric that measures the quality of a goal-scoring opportunity by calculating the likelihood that it will be scored by using information on similar shots in the past. In other words, a shot with an xG of 0.5 is expected to be scored half the time. Comparing the number of goals scored to the xG gives a measure of efficiency, with a ratio greater than 1 indicating a player is overpeforming, while a ratio less than 1 indicates a player is underpeforming.
+    Goals to Expected Goals Ratio – Expected Goals (xG) is a metric that measures the quality of a goal-scoring opportunity by calculating the likelihood that it will be scored, based on data from similar shots in the past. In other words, a shot with an xG of 0.5 is expected to be scored half the time. Comparing the number of goals scored to xG provides a measure of efficiency, with a ratio greater than 1 indicating that a player is overperforming, while a ratio less than 1 indicates underperforming.
 
-    To add a Goals to Expected Goals ratio column, a new measure was created with the following calculation:
-    goals_to_xg_ratio = SUM(match_data[goal]) / SUM(match_data[expected_goal])
+To add a Goals to Expected Goals Ratio column, a new measure was created with the following calculation:
+goals_to_xg_ratio = SUM(match_data[goal]) / SUM(match_data[expected_goal])
 
-    *Note that the Goals to Expected Goals ratio is not adjusted to "per 90", since creating a "Goals per 90 to Expected Goals per 90" ratio yields the same result.
+Note: The Goals to Expected Goals Ratio is not adjusted to “per 90,” since calculating a "Goals per 90 to Expected Goals per 90" ratio yields the same result.
 
-    - Shot Conversion Rate - Shot Conversion Rate is the percentage of shots that result in goals. This measures an attacker's clinical finishing ability and is another measure of efficiency in front of goal.
+Shot Conversion Rate – Shot Conversion Rate is the percentage of shots that result in goals. This measures an attacker’s clinical finishing ability and is another indicator of efficiency in front of goal.
 
-    To add a Shot Conversion Ratio column, a new measure was created with the following calculation:
-    shot_conversion_rate = (SUM(match_data[goal]) / SUM(match_data[shot])) * 100
+To add a Shot Conversion Rate column, a new measure was created with the following calculation:
+shot_conversion_rate = (SUM(match_data[goal]) / SUM(match_data[shot])) * 100
 
 Value Analysis
+
+
 
 Conclusion
 
